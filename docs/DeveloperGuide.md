@@ -8,6 +8,38 @@ title: Developer Guide
 --------------------------------------------------------------------------------------------------------------------
 ## **Design**
 
+### Ui component
+
+![Structure of the Ui Component](images/UiClassDiagram.png)
+
+<div markdown="span" class="alert alert-ui">
+  
+  :information_source: <strong>Note:</strong> The class diagram for the Ui is a simplified version of the implementation. Generics are used in the implementation but is omitted in the class diagram.
+  
+</div>
+
+**API** :
+[`Ui.java`](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/src/main/java/seedu/address/ui/Ui.java)
+
+The Ui consists of a `MainWindow` that is made up of parts e.g. `CommandBox`, `ResultDisplay`, `ListPanel`, `InformationDisplay`, `Tabs` etc. 
+All these, including the `MainWindow`, inherit from the abstract `UiPart` class.
+
+The `Tabs` is located at the most left of the application and it consists of three tabs which defines the main three data item `CompanyItem`, `ApplicationItem`, `ProfileItem`. <br/>
+
+The `ListPanel` is located at the center of the application and it consists of UI `CompanyCard`, `ApplicationCard`, `ProfileCard` to display key information of each data idea. <br/>
+
+The `InformationDisplay` appears at the right of the application and it consists of UI `CompanyDisplay`, `ApplicationDisplay`, `ProfileDisplay`. The `InformationDisplay` displays the full information regarding the data item. <br/>
+
+The `ResultDisplay` and `CommandBox` appears at the bottom of the application and the `ResultDisplay` is above the `CommandBox` even though the UI does not show it explictly. <br/>
+
+The `UI` components uses the JavaFX UI framework. The layout of these UI parts are defined in matching .fxml files that are in the `src/main/resources/view` folder. For example, the layout of the [`MainWindow`](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/src/main/java/seedu/address/ui/MainWindow.java) is specified in [`MainWindow.fxml`](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/src/main/resources/view/MainWindow.fxml). The styling of the application is mainly at [`MainWindow.css`](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/src/main/resources/view/MainWindow.css).
+
+The `UI` component,
+
+* Executes user commands using the `Logic` component.
+* Listens for changes to `Model` data so that the UI can be updated with the modified data.
+
+
 ### Logic component
 
 ![Structure of the Logic Component](images/LogicClassDiagram.png)
@@ -21,7 +53,7 @@ title: Developer Guide
 </div>
 
 **API** :
-[`Logic.java`](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/src/main/java/seedu/address/logic/Logic.java)
+[`Logic.java`](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/src/main/java/seedu/internhunter/logic/Logic.java)
 
 1. `Logic` uses the `MainParser` class to parse the user command.
 2. This results in a `Command` object which is executed by the `LogicManager`.
@@ -48,7 +80,7 @@ API call.
 <p id="storage-class-diagram" align="center"><img src="images/StorageClassDiagram.png"/></p>
 
 **API** :
-[`Storage.java`](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/src/main/java/seedu/address/storage/Storage.java)
+[`Storage.java`](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/src/main/java/seedu/internhunter/storage/Storage.java)
 
 The Storage component,
 * can save UserPref objects in json format and read it back.
@@ -310,14 +342,14 @@ Upon a user’s entry of a valid switch command, a `SwitchCommand` object is cre
 
 <p align="left"><img src="images/switchcommand/SwitchCommandClassDiagram.png" width="70%" height="70%"/></p>
 
-`SwitchCommand` implements the `execute()` method from the `Command` abstract class whereby upon execution, the 
+`SwitchCommand` implements the `execute(...)` method from the `Command` abstract class whereby upon execution, the 
 method will switch the tab and the screen if a valid command is provided.
 
-This is how the `SwitchCommand#execute()` method works upon execution:
+This is how the `SwitchCommand#execute(...)` method works upon execution:
 1. The current tab that the user is viewing is obtained via the `Model#getTabName()` method.
 2. The input tab will be check against the current tab. <br/>
- 2a. If both the tabs are the same, a same tab message will be passed to `CommandUtil#getCommandResult()`method. <br/>
- 2b. If both the tabs are different, a success message will be passed to `CommandUtil#getCommandResult()`method. <br/>
+ 2a. If both the tabs are the same, a same tab message will be passed to `CommandUtil#getCommandResult(...)`method. <br/>
+ 2b. If both the tabs are different, a success message will be passed to `CommandUtil#getCommandResult(...)`method. <br/>
 
 <p align="center">The overall process of how <code>SwitchCommand</code> was generated.</p>
 
@@ -327,11 +359,11 @@ This is how the `SwitchCommand#execute()` method works upon execution:
 
 <p align="center"><img src="images/ExecuteSwitchMeCommandSequenceDiagram.png" width="75%" height="75%"/></p>
 
-This is how the `CommandUtil#getCommandResult()` method works upon execution:
+This is how the `CommandUtil#getCommandResult(...)` method works upon execution:
 1. The current tab that the user is viewing is obtained via the `Model#getTabName()` method.
 2. The input tab will be check against the current tab. <br/>
- 2a. If both the tabs are the same, a `CommandResult` with a same tab message is return.
- 2b. If both the tabs are different, we will change the tab to the input's tab name via `Model#setTabName()`. A `CommandResult` with a success message is return.
+ 2a. If both the tabs are the same, a `CommandResult` with a same tab message is return. <br/>
+ 2b. If both the tabs are different, we will change the tab to the input's tab name via `Model#setTabName(...)`. A `CommandResult` with a success message is return.
 
 <p align="center">The process of how <code>getCommandResult</code>.</p>
 

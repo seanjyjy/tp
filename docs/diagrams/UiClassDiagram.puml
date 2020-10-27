@@ -24,6 +24,7 @@ class ListPanel
 class CompanyCard
 class ApplicationCard
 class ProfileCard
+class InternshipCard
 
 class CompanyDisplay
 class ApplicationDisplay
@@ -32,6 +33,7 @@ class ProfileDisplay
 class ApplicationListPanel
 class CompanyListPanel
 class ProfileListPanel
+class InternshipListPanel
 }
 
 hide members
@@ -64,18 +66,20 @@ ApplicationDisplay -left-|> InformationDisplay
 CompanyDisplay -left-|> InformationDisplay
 ProfileDisplay -left-|> InformationDisplay
 
-
 ApplicationListPanel -left-|> ListPanel
 CompanyListPanel -left-|> ListPanel
 ProfileListPanel -left-|> ListPanel
+InternshipListPanel -left-|> ListPanel
 
 ApplicationListPanel *--> ApplicationCard
 CompanyListPanel *--> CompanyCard
 ProfileListPanel *--> ProfileCard
+InternshipListPanel *--> InternshipCard
 
 ApplicationCard --|> Card
 CompanyCard --|> Card
 ProfileCard --|> Card
+InternshipCard --|> Card
 
 HelpWindow --|> PopupWindow
 InternshipWindow --|> PopupWindow
@@ -84,17 +88,22 @@ Card -down-|> UiPart
 PopupWindow -down-|> UiPart
 ResultDisplay -down-|> UiPart
 MainWindow -down-|> UiPart
+MainWindow -[hidden]-|> UiPart
 CommandBox -down-|> UiPart
 Tabs -down-|> UiPart
 InformationDisplay -down-|> UiPart
 
-
 ApplicationCard ..>Model
 ProfileCard ..> Model
 CompanyCard ..> Model
+
+InternshipCard .[hidden].> UiPart
+InternshipCard ..> Model
+
 ApplicationDisplay ..> Model
 CompanyDisplay ..> Model
 ProfileDisplay ..> Model
+
 UiPart .[hidden].> Model
 
 @enduml

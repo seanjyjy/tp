@@ -2,6 +2,18 @@
   "items": [
     {
       "status": "Offered",
+      "statusDate": "12 Jun 2022 @ 11.59 PM",
+      "internshipItem": {
+        "companyName": "Goldman Sachs",
+        "jobTitle": "Business Analyst",
+        "period": "Summer break",
+        "wage": "4000",
+        "requirements": [
+        ]
+      }
+    },
+    {
+      "status": "Offered",
       "statusDate": "12 Jun 2021 @ 11.59 PM",
       "internshipItem": {
         "companyName": "Shopee",

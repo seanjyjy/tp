@@ -9,11 +9,11 @@
     </a>
 </p>
 
-<p align="center"><img src="docs/images/Ui.png" width="100%"/></p>
+<p align="center"><img src="docs/images/readme/Ui.png" width="100%"/></p>
 
 <div>
-  <img src="docs/images/App.png" width="49.7%"/>
-  <img src="docs/images/Profile.png" width="49.7%"/>
+  <img src="docs/images/readme/App.png" width="49.7%"/>
+  <img src="docs/images/readme/Profile.png" width="49.7%"/>
 </div>
 
 Welcome to **InternHunter**, a CLI-centric desktop application which aids university students in applying for tech
