@@ -9,7 +9,6 @@ import static seedu.internhunter.model.util.ItemUtil.APPLICATION_NAME;
 import static seedu.internhunter.model.util.ItemUtil.COMPANY_ALIAS;
 import static seedu.internhunter.testutil.Assert.assertThrows;
 
-import java.io.IOException;
 import java.nio.file.Path;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +19,6 @@ import seedu.internhunter.commons.core.GuiSettings;
 import seedu.internhunter.commons.core.index.Index;
 import seedu.internhunter.logic.commands.CommandResult;
 import seedu.internhunter.logic.commands.SwitchCommand;
-import seedu.internhunter.logic.commands.add.AddCommand;
 import seedu.internhunter.logic.commands.delete.DeleteCommand;
 import seedu.internhunter.logic.commands.exceptions.CommandException;
 import seedu.internhunter.logic.parser.exceptions.ParseException;
@@ -39,7 +37,6 @@ import seedu.internhunter.storage.profile.JsonAdaptedProfileItem;
 import seedu.internhunter.ui.tabs.TabName;
 
 public class LogicManagerTest {
-    private static final IOException DUMMY_IO_EXCEPTION = new IOException("dummy exception");
 
     @TempDir
     public Path temporaryFolder;
@@ -92,34 +89,6 @@ public class LogicManagerTest {
     public void execute_validCommand_success() throws Exception {
         String switchCommand = SwitchCommand.COMMAND_WORD + " " + COMPANY_ALIAS;
         assertCommandSuccess(switchCommand, String.format(MESSAGE_SAME_SCREEN, TabName.COMPANY), model);
-    }
-
-    @Test
-    public void execute_storageThrowsIoException_throwsCommandException() {
-        // Setup LogicManager with JsonItemListIoExceptionThrowingStub
-        JsonItemListStorage<ApplicationItem, JsonAdaptedApplicationItem> applicationItemListStorage =
-                new JsonItemListStorage<>(temporaryFolder.resolve("applicationitemlist.json"),
-                        ApplicationItem.class, JsonAdaptedApplicationItem.class);
-        JsonItemListStorage<CompanyItem, JsonAdaptedCompanyItem> companyItemListStorage =
-                new JsonItemListStorage<>(temporaryFolder.resolve("companyitemlist.json"),
-                        CompanyItem.class, JsonAdaptedCompanyItem.class);
-        JsonItemListStorage<ProfileItem, JsonAdaptedProfileItem> profileItemListStorage =
-                new JsonItemListStorage<>(temporaryFolder.resolve("profileitemlist.json"),
-                        ProfileItem.class, JsonAdaptedProfileItem.class);
-        JsonUserPrefsStorage userPrefsStorage =
-                new JsonUserPrefsStorage(temporaryFolder.resolve("ioExceptionUserPrefs.json"));
-        StorageManager storage = new StorageManager(applicationItemListStorage, companyItemListStorage,
-                profileItemListStorage, userPrefsStorage);
-        logic = new LogicManager(model, storage);
-
-        // Execute add command
-        String addCommand = AddCommand.COMMAND_WORD + " int ";
-        // Person expectedPerson = new PersonBuilder(AMY).withTags().build(); DELETED PERSONBUILDER
-        ModelManager expectedModel = new ModelManager();
-        // expectedModel.getAddressBook().addItem(expectedPerson);
-        String expectedMessage = LogicManager.FILE_OPS_ERROR_MESSAGE + DUMMY_IO_EXCEPTION;
-        // Todo: Update testcase for expected model
-        //        assertCommandFailure(addCommand, CommandException.class, expectedMessage, expectedModel);
     }
 
     @Test
