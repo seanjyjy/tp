@@ -33,7 +33,7 @@ and their own user profile, so that they can keep track of internships that they
 - Libraries Used: [JavaFX](https://github.com/openjdk/jfx), [Jackson](https://github.com/FasterXML/jackson),
 [JUnit5](https://github.com/junit-team/junit5)
 
-### Images Used
+### Images Used 
 Credits goes to [Freepik](https://www.flaticon.com/authors/freepik), [itim201](https://www.flaticon.com/authors/itim2101), [DinosoftLabs](https://www.flaticon.com/authors/dinosoftlabs)
 
 ## Licence : [MIT](https://github.com/AY2021S1-CS2103T-T15-4/tp/blob/master/LICENSE)
