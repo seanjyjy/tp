@@ -22,6 +22,9 @@ import static seedu.internhunter.testutil.internship.InternshipItemFieldsUtil.VA
 import static seedu.internhunter.testutil.internship.InternshipItemFieldsUtil.VALID_WAGE_2000;
 import static seedu.internhunter.testutil.internship.InternshipItemFieldsUtil.VALID_WAGE_3000;
 
+/**
+ * Contains the description of fields for the internship command tests.
+ */
 public class InternshipCommandTestUtil {
 
     // Valid index

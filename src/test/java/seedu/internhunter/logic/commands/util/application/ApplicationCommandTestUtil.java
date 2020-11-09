@@ -14,7 +14,11 @@ import static seedu.internhunter.testutil.application.ApplicationItemFieldsUtil.
 import static seedu.internhunter.testutil.application.ApplicationItemFieldsUtil.STATUS_DATE_JUNE_2021;
 import static seedu.internhunter.testutil.application.ApplicationItemFieldsUtil.STATUS_DATE_JUNE_2022;
 
+/**
+ * Contains the description of fields for the application command tests.
+ */
 public class ApplicationCommandTestUtil {
+
     // Valid Index
     public static final String INDEX_DESC_FIRST = " " + PREFIX_INDEX + INDEX_FIRST.getOneBased();
 

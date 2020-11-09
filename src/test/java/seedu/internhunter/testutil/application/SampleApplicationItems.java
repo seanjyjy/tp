@@ -17,6 +17,9 @@ import java.util.List;
 import seedu.internhunter.model.application.ApplicationItem;
 import seedu.internhunter.model.item.ItemList;
 
+/**
+ * A utility class containing a list of {@code ApplicationItem} objects to be used in tests.
+ */
 public abstract class SampleApplicationItems {
 
     public static final ApplicationItem GOLDMAN_OFFERED = new ApplicationItemBuilder()
@@ -43,7 +46,7 @@ public abstract class SampleApplicationItems {
             .build();
 
     /**
-     * Returns an {@code ItemList<ApplicationItem>} with all the sample application items.
+     * Returns an {@code ItemList<ApplicationItem>} with some sample application items.
      */
     public static ItemList<ApplicationItem> getSampleApplicationItemList() {
         ItemList<ApplicationItem> applicationItemList = new ItemList<>();
@@ -53,7 +56,13 @@ public abstract class SampleApplicationItems {
         return applicationItemList;
     }
 
+    /**
+     * Returns a {@code List<ApplicationItem>} with some sample company items.
+     *
+     * @return A {@code List<ApplicationItem>} with some sample company items.
+     */
     public static List<ApplicationItem> getApplicationItems() {
         return new ArrayList<>(Arrays.asList(GOLDMAN_OFFERED, SHOPEE_OFFERED, LAZADA_REJECTED));
     }
+
 }

@@ -99,6 +99,11 @@ public class InternshipItemBuilder {
         return this;
     }
 
+    /**
+     * Returns the InternshipItem.
+     *
+     * @return InternshipItem.
+     */
     public InternshipItem build() {
         return new InternshipItem(companyName, jobTitle, period, wage, requirements);
     }
