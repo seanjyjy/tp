@@ -3,18 +3,13 @@ layout: page
 title: Keane Chan Jun Yu - Project Portfolio
 ---
 
-## Project: InternHunter
-
----
-
 InternHunter is a CLI-centric desktop application which aids university students in applying for tech internships.
 It lets users manage their own customisable collection of companies, internships, internship applications and their 
 own user profile, so that they can keep track of internships that they are interested in.
 
-It has a GUI created with JavaFX. It is written in Java, and has about 35k LoC. Our team of 5 took roughly 6 weeks to
-morph the existing AB3 implementation into our own, adding a total of more than 30,000 lines of code to the application.
+It has a GUI created with JavaFX. It is written in Java, and has about 35k LoC.
 
-## Summary of contributions
+**Summary of contributions**
 
 * **Code contributed:** [RepoSense link](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=keanecjy)
 
@@ -43,12 +38,10 @@ morph the existing AB3 implementation into our own, adding a total of more than 
     * Justification: By adding the idea of a general Item class and the generic Item lists, it paved the way for the
     general code structure of our application, as this helped to greatly reduce code duplication and allowed for smooth
     interaction between the 4 data types in the model, logic and storage component.
-  * Delete an application (Pull request [\#140](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/140))
-    * Allows the user to delete an application.
-  * Update an application (Pull request [\#152](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/152))
-    * Updates an application in the list of applications.
   * View an application (Pull request [\#152](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/152))
-    * What it does: Allows the user to view an application in full detail.
+    * What it does: Allows the user to view an application in full detail
+  * Delete an application (Pull request [\#140](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/140))
+  * Update an application (Pull request [\#152](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/152))
   * Created and maintained the ApplicationItem and InternshipItem classes and fields in the model. (Pull request [\#98](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/98))
   * Refactor the code to match application (Pull request [\#284](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/284))
   * Created general wrapper regex classes for items in the model (Pull request [\#126](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/126))
@@ -77,8 +70,7 @@ morph the existing AB3 implementation into our own, adding a total of more than 
   (Pull request [\#60](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/60), [\#357](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/357))
   * Setup codacy for the team so that we can track our code quality 
   (Pull request [\#397](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/397))
-  * Managed the issue tracker ([Link to the 70 issues I created](https://github.com/AY2021S1-CS2103T-T15-4/tp/issues?q=is%3Aissue+author%3Akeanecjy))
-  * Managed milestones on GitHub
+  * Managed the issue tracker ([Link to the 70 issues I created](https://github.com/AY2021S1-CS2103T-T15-4/tp/issues?q=is%3Aissue+author%3Akeanecjy)) and milestones on GitHub
 
 * **Community**:
   * PRs reviewed (with non-trivial review comments): [\#79](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/79),

@@ -3,8 +3,8 @@ package seedu.internhunter.model.company;
 import seedu.internhunter.model.wrapper.AlphaNumericWord;
 
 /**
- * Represents a name of a field in an Item. TODO: Javadocs (Shawn)
- * Guarantees: immutable; is valid as declared in {@link #isValidAlphaNumericWord(String)}
+ * Represents a Company's name.
+ * Guarantees: immutable; is valid as declared in {@link #isValidAlphaNumericWord(String)}.
  */
 public class CompanyName extends AlphaNumericWord {
 
@@ -21,7 +21,10 @@ public class CompanyName extends AlphaNumericWord {
     }
 
     /**
-     * Returns true if a given string is a valid company name.
+     * Checks if the company name is valid or not. Company name must follow the format of {@code AlphaNumericWord}.
+     *
+     * @param test The string to test.
+     * @return True if test string has a valid input format, false otherwise.
      */
     public static boolean isValidCompanyName(String test) {
         return isValidAlphaNumericWord(test);

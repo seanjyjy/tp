@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.internhunter.commons.exceptions.IllegalValueException;
 import seedu.internhunter.model.profile.Descriptor;
+import seedu.internhunter.model.profile.ProfileItem;
 import seedu.internhunter.model.profile.ProfileItemCategory;
 import seedu.internhunter.model.profile.Title;
 
@@ -76,6 +77,8 @@ public class JsonAdaptedProfileItemTest {
     @Test
     public void constructor_nullInput_throwsAssertionError() {
         assertThrows(AssertionError.class, () -> new JsonAdaptedProfileItem(null));
+        ProfileItem profileItem = null;
+        assertThrows(AssertionError.class, () -> new JsonAdaptedProfileItem(profileItem));
     }
 
 }

@@ -2,7 +2,6 @@ package seedu.internhunter.model.company;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.internhunter.testutil.Assert.assertThrows;
 import static seedu.internhunter.testutil.company.CompanyItemFieldsUtil.INVALID_PHONE_ALPHABETS;
@@ -102,14 +101,21 @@ public class PhoneTest {
 
     @Test
     public void equals_equalityTest_success() {
-        assertEquals(VALID_PHONE_ONE, VALID_PHONE_ONE);
+        // same object -> return true
+        assertTrue(VALID_PHONE_ONE.equals(VALID_PHONE_ONE));
         Phone phoneCopy = new Phone(VALID_PHONE_FACEBOOK);
-        assertEquals(VALID_PHONE_ONE, phoneCopy);
+        // same value -> return true
+        assertTrue(VALID_PHONE_ONE.equals(phoneCopy));
     }
 
     @Test
     public void equals_nonEqualityTest_success() {
-        assertNotEquals(VALID_PHONE_ONE, VALID_PHONE_TWO);
+        // different value -> return false
+        assertFalse(VALID_PHONE_ONE.equals(VALID_PHONE_TWO));
+        // null -> return false
+        assertFalse(VALID_PHONE_ONE.equals(null));
+        // different types -> return false
+        assertFalse(VALID_PHONE_ONE.equals(0.5f));
     }
 
     @Test

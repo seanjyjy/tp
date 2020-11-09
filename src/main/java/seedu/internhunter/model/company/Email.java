@@ -4,8 +4,8 @@ import static java.util.Objects.requireNonNull;
 import static seedu.internhunter.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Person's email in the address book. TODO: Javadocs (Shawn)
- * Guarantees: immutable; is valid as declared in {@link #isValidEmail(String)}
+ * Represents a Company's email address.
+ * Guarantees: immutable; is valid as declared in {@link #isValidEmail(String)}.
  */
 public class Email {
 
@@ -41,12 +41,20 @@ public class Email {
     }
 
     /**
-     * Returns if a given string is a valid email.
+     * Checks if the test string is a valid email based on {@code #isValidEmail(String)}.
+     *
+     * @param test The string to test.
+     * @return True if test string has a valid input format, false otherwise.
      */
     public static boolean isValidEmail(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 
+    /**
+     * Returns the value of the email.
+     *
+     * @return The value of the email address.
+     */
     public String getValue() {
         return value;
     }

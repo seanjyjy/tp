@@ -7,30 +7,24 @@ title: Lum Jian Yang Sean's Project Portfolio page
 
 InternHunter is a CLI-centric desktop application which aids university students in applying for tech internships.
 It lets users manage their own customisable collection of companies, internships, internship applications and their 
-own user profile, so that they can keep track of internships that they are interested in.
-
-It has a GUI created with JavaFX. It is written in Java, and has about 35k LoC.
+own user profile, so that they can keep track of internships that they are interested in. It has a GUI created with JavaFX. It is written in Java, and has about 35k LoC.
 
 ---
 
-## Summary of contributions
+**Summary of contributions**
 
 * Code contributed: [RepoSense link](https://nus-cs2103-ay2021s1.github.io/tp-dashboard/#breakdown=true&search=seanjyjy&sort=groupTitle&sortWithin=title&since=2020-08-14&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
 
 * **Features and Enhancements implemented:**
   * Convert the whole mock-ui into code and link it to be functional code. (Pull request [\#100](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/100), [\#144](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/144), [\#157](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/157), [\#164](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/164))
-    * Highlights: It has a very modern design that is very different from AB3. There were much consideration into designing and implementing the Ui to fix the 4 data types that we have. There are tabs to simulate the different screens for the different data types. Careful use of generics are required even at the Ui side. In order to allow the user to see more information regarding a particular item, an extra view section is included on the right of the Ui. As there were quite a number of commands, the Ui have to be carefully implemented to avoid any Ui bugs.
+    * Highlights: It has a very modern design that is very different from AB3. There were much consideration into designing and implementing the Ui to fix the 4 data types that we have. There are tabs to simulate the different screens for the different data types. In order to allow the user to see more information regarding a particular item, an extra view section is included on the right of the Ui.
   * Switch tab (Pull request [\#104](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/104))
-    * What it does: Allows the user to switch tabs to view the different data types available.
     * Highlights: This command required careful planning as we were considering how should the app "work" for the best User Experience. Ultimately, we decided that we will help to improve the User Experience by helping them to switch tabs if they were to execute commands for other tabs. Thus this command become solely for the user to just switch between the tabs without having to execute commands that might cause changes.
   * Find Applications (Pull request [\#190](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/190), [\#198](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/198))
-    * What it does: Allows the user to find applications by Job Title from the app's application list.
   * List all applications (Pull request [\#190](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/190), [\#198](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/198))
-    * What it does: Allows the user to list all applications in the app's application list.
   * Add match command GUI (Pull request [\#277](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/277))
-    * What it does: Creates a new window to display all the matched internship to requirements.
   * Contributed significantly to increase test coverage. (Pull request [\#178](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/178), [\#198](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/198) ,[\#273](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/273), [\#298](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/298), [\#353](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/353), [\#356](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/356), [\#409](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/409), [\#422](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/422))
-  * Did javadocs (Pull request [\#179](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/179), [\#395](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/395), [\#409](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/409)), as well as in some general pull request.
+  * Did javadocs (Pull request [\#179](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/179), [\#395](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/395)), as well as in some general pull request.
 
 * **Documentation**:
   * User guide:
@@ -56,7 +50,7 @@ It has a GUI created with JavaFX. It is written in Java, and has about 35k LoC.
   * Did the [demo videos](https://docs.google.com/document/d/1CkYsVvewbjA4TZkfzKLBhu2uviXBE9_q-1hQXOxekeo/edit#heading=h.28i4rmmvhv4q) for each iteration.
   * Contributed to some version control. (help to update the version for each iteration) (Pull request [\#251](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/251), [\#259](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/259))
   * Managed the [issue tracker](https://github.com/AY2021S1-CS2103T-T15-4/tp/issues?q=is%3Aissue+author%3Aseanjyjy)
-  * Did the readme for Ui-mock up as well as image credits. (Pull request [\#95](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/95), [\#172](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/172), [\#353](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/353))
+  * Did the readme for Ui.png as well as image credits. (Pull request [\#95](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/95), [\#172](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/172), [\#353](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/353))
   * Did tweaks to the app icon. (Pull request [\#257](https://github.com/AY2021S1-CS2103T-T15-4/tp/pull/257))
 
 * **Community**:

@@ -2,7 +2,6 @@ package seedu.internhunter.model.application;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.internhunter.testutil.Assert.assertThrows;
 import static seedu.internhunter.testutil.application.ApplicationItemFieldsUtil.BLANK_STATUS_DATE;
@@ -58,18 +57,23 @@ public class StatusDateTest {
 
     @Test
     public void equals_equalityTest_success() {
-        assertEquals(VALID_STATUS_DATE_JUNE_2021, VALID_STATUS_DATE_JUNE_2021);
-        final StatusDate statusDateCopy = new StatusDate(DateUtil.convertToDateTime(STATUS_DATE_JUNE_2021));
-        assertEquals(VALID_STATUS_DATE_JUNE_2021, statusDateCopy);
+        // same object -> return true
+        assertTrue(VALID_STATUS_DATE_JUNE_2021.equals(VALID_STATUS_DATE_JUNE_2021));
+        StatusDate statusDateCopy = new StatusDate(DateUtil.convertToDateTime(STATUS_DATE_JUNE_2021));
+        // same value -> return true
+        assertTrue(VALID_STATUS_DATE_JUNE_2021.equals(statusDateCopy));
     }
 
     @Test
     public void equals_nonEqualityTest_success() {
         // Different year
-        assertNotEquals(VALID_STATUS_DATE_JUNE_2021, VALID_STATUS_DATE_JUNE_2022);
+        assertFalse(VALID_STATUS_DATE_JUNE_2021.equals(VALID_STATUS_DATE_JUNE_2022));
         // Different day in same year
-        assertNotEquals(VALID_STATUS_DATE_MAY_2021, VALID_STATUS_DATE_JUNE_2021);
-
+        assertFalse(VALID_STATUS_DATE_JUNE_2021.equals(VALID_STATUS_DATE_MAY_2021));
+        // null -> return false
+        assertFalse(VALID_STATUS_DATE_JUNE_2021.equals(null));
+        // different types -> return false
+        assertFalse(VALID_STATUS_DATE_JUNE_2021.equals(0.5f));
     }
 
     @Test

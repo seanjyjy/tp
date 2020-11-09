@@ -44,8 +44,8 @@ Industry -[hidden]right-> CompanyName
 
 InternshipItem --> "1" CompanyName
 InternshipItem *--> "1" JobTitle
-InternshipItem *--> "0..1" Wage
-InternshipItem *--> "0..1" Period
+InternshipItem *--> "1" Wage
+InternshipItem *--> "1" Period
 InternshipItem *--> "*" Requirement
 
 JobTitle -[hidden]right-> Wage

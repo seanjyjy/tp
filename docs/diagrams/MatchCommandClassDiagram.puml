@@ -16,7 +16,7 @@ class MatchCommand {
 }
 
 class "ABSTRACT\nCommand" as Command {
-    +execute(Model) : CommandResult
+    +execute(Model) : CommandResult ABSTRACT
 }
 
 class Model <<interface>> {

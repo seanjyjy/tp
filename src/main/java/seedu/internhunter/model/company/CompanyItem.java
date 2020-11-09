@@ -33,23 +33,29 @@ import seedu.internhunter.model.item.Item;
 import seedu.internhunter.storage.company.JsonAdaptedCompanyItem;
 
 /**
- * Represents a Person in the address book. todo javadocs (shawn)
+ * Represents a Company.
  * Guarantees: details are present and not null, field values are validated, immutable.
  */
 public class CompanyItem extends Item {
 
     // Identity fields
     private final CompanyName companyName;
-    private final Phone phone;
-    private final Email email;
 
     // Data fields
+    private final Phone phone;
+    private final Email email;
     private final Address address;
     private final Set<Industry> industries = new HashSet<>();
     private final ObservableList<InternshipItem> internships = FXCollections.observableList(new ArrayList<>());
 
     /**
-     * Every field must be present and not null.
+     * Constructs a {@code Company} without internships. Every field must be present and not null.
+     *
+     * @param companyName The company's name.
+     * @param phone The company's phone number.
+     * @param email The company's email address.
+     * @param address The company's physical address.
+     * @param industries The company's industry types.
      */
     public CompanyItem(CompanyName companyName, Phone phone, Email email, Address address, Set<Industry> industries) {
         requireAllNonNull(companyName, phone, email, address, industries);
@@ -61,7 +67,14 @@ public class CompanyItem extends Item {
     }
 
     /**
-     * Every field must be present and not null.
+     * Constructs a {@code Company} with internships. Every field must be present and not null.
+     *
+     * @param companyName The company's name.
+     * @param phone The company's phone number.
+     * @param email The company's email address.
+     * @param address The company's physical address.
+     * @param industries The company's industry types.
+     * @param internships The internships offered by the company.
      */
     public CompanyItem(CompanyName companyName, Phone phone, Email email, Address address, Set<Industry> industries,
             List<InternshipItem> internships) {
@@ -74,55 +87,104 @@ public class CompanyItem extends Item {
         this.internships.addAll(internships);
     }
 
+    /**
+     * Retrieves the name of the {@code CompanyItem}.
+     *
+     * @return {@code CompanyName} of the {@code CompanyItem}.
+     */
     public CompanyName getCompanyName() {
         return companyName;
     }
 
+    /**
+     * Retrieves the phone number of the {@code CompanyItem}.
+     *
+     * @return {@code Phone} of the {@code CompanyItem}.
+     */
     public Phone getPhone() {
         return phone;
     }
 
+    /**
+     * Retrieves the email address of the {@code CompanyItem}.
+     *
+     * @return {@code Email} of the {@code CompanyItem}.
+     */
     public Email getEmail() {
         return email;
     }
 
+    /**
+     * Retrieves the physical address of the {@code CompanyItem}.
+     *
+     * @return {@code Address} of the {@code CompanyItem}.
+     */
     public Address getAddress() {
         return address;
     }
 
+    /**
+     * Retrieves the value of the name of the {@code CompanyItem}.
+     *
+     * @return Value of the {@code CompanyName} of the {@code CompanyItem}.
+     */
     public String getCompanyNameValue() {
         return companyName.getValue();
     }
 
+    /**
+     * Retrieves the value of the phone number of the {@code CompanyItem}.
+     *
+     * @return Value of the {@code Phone} of the {@code CompanyItem}.
+     */
     public String getPhoneValue() {
         return phone.getValue();
     }
 
+    /**
+     * Retrieves the value of the email address of the {@code CompanyItem}.
+     *
+     * @return Value of the {@code Email} of the {@code CompanyItem}.
+     */
     public String getEmailValue() {
         return email.getValue();
     }
 
+    /**
+     * Retrieves the value of the physical address of the {@code CompanyItem}.
+     *
+     * @return Value of the {@code Address} of the {@code CompanyItem}.
+     */
     public String getAddressValue() {
         return address.getValue();
     }
 
     /**
-     * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
+     * Retrieves an immutable industry set, which throws {@code UnsupportedOperationException}
      * if modification is attempted.
+     *
+     * @return Set of industries of the {@code CompanyItem}.
      */
     public Set<Industry> getIndustries() {
         return Collections.unmodifiableSet(industries);
     }
 
     /**
-     * todo javadocs (shawn)
+     * Retrieves a list of all the internships in the {@code CompanyItem}.
+     *
+     * @return List of all the internships of the {@code CompanyItem}.
      */
     public List<InternshipItem> getInternships() {
         return Collections.unmodifiableList(internships);
     }
 
     /**
-     * todo javadocs (shawn)
+     * Retrieves a single internship from the {@code CompanyItem}.
+     *
+     * @param internshipIndex The index of the internship in the company's internship list.
+     * @return The internship in the company's internship list indexed by the given index.
+     * @throws CommandException If index given is larger than the number of internships in the company's internship
+     * list.
      */
     public InternshipItem getInternship(Index internshipIndex) throws CommandException {
         if (internshipIndex.getZeroBased() >= internships.size()) {
@@ -132,13 +194,21 @@ public class CompanyItem extends Item {
     }
 
     /**
-     * todo javadocs (shawn)
+     * Adds an internship to the company's internship list.
+     *
+     * @param internship The internship to add.
      */
     public void addInternship(InternshipItem internship) {
         internships.add(internship);
     }
 
-    /** todo javadocs (shawn) */
+    /**
+     * Removes the internship specified by the given index from the company's internship list.
+     *
+     * @param internshipIndex The index of the internship in the company's internship list.
+     * @throws CommandException If index given is larger than the number of internships in the company's internship
+     * list.
+     */
     public void removeInternship(Index internshipIndex) throws CommandException {
         if (internshipIndex.getZeroBased() >= internships.size()) {
             throw new CommandException(String.format(MESSAGE_INVALID_ITEM_DISPLAYED_INDEX, INTERNSHIP_NAME));
@@ -146,28 +216,42 @@ public class CompanyItem extends Item {
         internships.remove(internshipIndex.getZeroBased());
     }
 
-    /** todo javadocs (shawn) */
+    /**
+     * Updates all internships in the company's internship list to take on the company's name.
+     */
     public void updateAllInternshipsCompanyName() {
         for (InternshipItem internship : internships) {
             internship.setCompanyName(companyName);
         }
     }
 
-    /** todo javadocs (shawn) */
+    /**
+     * Retrieves the number of internships in the company's internship list.
+     *
+     * @return The number of internships in the company's internship list.
+     */
     public int getNumberOfInternships() {
         return internships.size();
     }
 
     /**
-     * Checks if matching internship has same identity fields.
+     * Checks if an internship already exists in the company's internship list.
      *
-     * @param internshipItem to check against.
-     * @return true if {@code internshipItem} exists in company.
+     * @param internshipItem Internship to check against.
+     * @return True if {@code internshipItem} exists in the company's internship list. False otherwise.
      */
     public boolean containsInternship(InternshipItem internshipItem) {
         return internships.stream().anyMatch(x -> x.isSameItem(internshipItem));
     }
 
+    /**
+     * Checks if an Item is the same as the {@code CompanyItem} using the weaker notion of equality. The Item is
+     * considered the same item as the {@code CompanyItem} if it is also a {@code CompanyItem} with the same
+     * {@code CompanyName}.
+     *
+     * @param otherItem Other Item to compare to.
+     * @return True if other Item is a {@code CompanyItem} with the same {@code CompanyName}.
+     */
     @Override
     public boolean isSameItem(Item otherItem) {
         if (this == otherItem) {
@@ -184,8 +268,10 @@ public class CompanyItem extends Item {
     }
 
     /**
-     * Returns true if both persons have the same identity and data fields.
-     * This defines a stronger notion of equality between two persons.
+     * Checks if an Object is the same as the {@code CompanyItem} using a stronger notion of equality.
+     *
+     * @param other Other Object to compare to.
+     * @return True if other Object is a {@code CompanyItem} with all the same fields.
      */
     @Override
     public boolean equals(Object other) {

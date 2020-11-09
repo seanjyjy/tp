@@ -4,7 +4,7 @@ import static java.util.Objects.requireNonNull;
 import static seedu.internhunter.commons.util.AppUtil.checkArgument;
 
 /**
- * Represents a Person's phone number in the address book. TODO: Javadocs (Shawn)
+ * Represents a Company's phone number.
  * Guarantees: immutable; is valid as declared in {@link #isValidPhone(String)}
  */
 public class Phone {
@@ -26,12 +26,20 @@ public class Phone {
     }
 
     /**
-     * Returns true if a given string is a valid phone number.
+     * Checks if the test string is a valid phone number.
+     *
+     * @param test The string to test.
+     * @return True if test string has a valid input format, false otherwise.
      */
     public static boolean isValidPhone(String test) {
         return test.matches(VALIDATION_REGEX);
     }
 
+    /**
+     * Returns the value of the phone number.
+     *
+     * @return The value of the phone number.
+     */
     public String getValue() {
         return value;
     }

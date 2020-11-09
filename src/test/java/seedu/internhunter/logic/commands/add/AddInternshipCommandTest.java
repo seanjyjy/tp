@@ -16,6 +16,7 @@ import static seedu.internhunter.testutil.TypicalIndexes.INDEX_SECOND;
 import static seedu.internhunter.testutil.TypicalIndexes.INDEX_THIRD;
 import static seedu.internhunter.testutil.company.SampleCompanyItems.GOLDMAN;
 import static seedu.internhunter.testutil.company.SampleCompanyItems.getSampleCompanyList;
+import static seedu.internhunter.testutil.internship.InternshipItemFieldsUtil.VALID_JOB_TITLE_BA;
 import static seedu.internhunter.testutil.internship.InternshipItemFieldsUtil.VALID_JOB_TITLE_SWE;
 import static seedu.internhunter.testutil.internship.InternshipItemFieldsUtil.VALID_PERIOD_MAY_TO_JULY;
 import static seedu.internhunter.testutil.internship.InternshipItemFieldsUtil.VALID_PERIOD_SUMMER;
@@ -161,6 +162,13 @@ public class AddInternshipCommandTest {
                 new Wage(VALID_WAGE_4000),
                 new Period(VALID_PERIOD_SUMMER),
                 new HashSet<>(Arrays.asList(new Requirement(VALID_REQUIREMENT_GRAPHQL)))));
+
+        // different Job Title -> return false
+        assertNotEquals(addInternshipCommand, new AddInternshipCommand(INDEX_FIRST,
+                new JobTitle(VALID_JOB_TITLE_BA),
+                new Wage(VALID_WAGE_4000),
+                new Period(VALID_PERIOD_SUMMER),
+                new HashSet<Requirement>()));
     }
 
     private AddInternshipCommand makeAddInternshipCommand() {

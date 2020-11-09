@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.internhunter.commons.exceptions.IllegalValueException;
 import seedu.internhunter.model.company.CompanyName;
+import seedu.internhunter.model.internship.InternshipItem;
 import seedu.internhunter.model.internship.JobTitle;
 import seedu.internhunter.model.internship.Period;
 import seedu.internhunter.model.internship.Requirement;
@@ -124,6 +125,8 @@ public class JsonAdaptedInternshipItemTest {
     @Test
     public void constructor_nullInput_throwsAssertionError() {
         assertThrows(AssertionError.class, () -> new JsonAdaptedInternshipItem(null));
+        InternshipItem internshipItem = null;
+        assertThrows(AssertionError.class, () -> new JsonAdaptedInternshipItem(internshipItem));
     }
 
 }

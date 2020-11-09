@@ -150,6 +150,7 @@ public class StringUtilTest {
     public void toTitleCase_invalidStringTooShort_throwsAssertionError() {
         assertThrows(AssertionError.class, () -> StringUtil.toTitleCase("a"));
         assertThrows(AssertionError.class, () -> StringUtil.toTitleCase(" "));
+        assertThrows(AssertionError.class, () -> StringUtil.toTitleCase(""));
     }
 
     @Test

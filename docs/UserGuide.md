@@ -65,8 +65,6 @@ Let's dive in.
 
 *\*If you're unfamiliar with Command-Line Interfaces (CLIs), you can find out about them [here](https://en.wikipedia.org/wiki/Command-line_interface)!*
 
-<div style="page-break-after: always;"></div>
-
 ### **Overview**
 
 You're searching for an internship.
@@ -79,6 +77,8 @@ webpages all while trying to recall your own skill set and finding what role bes
 It's a mess.
 
 InternHunter is here to fix that. Here's how:
+
+<div style="page-break-after: always;"></div>
 
 InternHunter lets you record crucial information that you would want to keep track of during your internship hunting 
 process by managing a collection of four types of items:
@@ -115,17 +115,19 @@ Ready to begin? Let's get hunting.
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
-1. Download the latest `InternHunter.jar` [here](https://github.com/AY2021S1-CS2103T-T15-4/tp/releases).
+1. Download the latest `[CS2103T-T15-4][InternHunter].jar` [here](https://github.com/AY2021S1-CS2103T-T15-4/tp/releases).
 
 1. Copy the file to the folder you want to use as the _home folder_ for InternHunter.
 
-1. Double-click the file to start the app or run `java -jar InternHunter.jar` from the terminal.
+1. Double-click the file to start the app or run `java -jar [CS2103T-T15-4][InternHunter].jar` from the terminal.
 
 1. Refer to [About](#about) to understand certain terminologies and usage of InternHunter.
 
 1. The [Features](#features) available in the current version of InternHunter are listed below.
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **About**
 
@@ -134,6 +136,8 @@ This section will bring you through the [Graphical User Interface(GUI)](#underst
 #### Understanding the GUI
 
 <p><img src="images/AnnotatedGui.png"/></p>
+
+<div style="page-break-after: always;"></div>
 
 #### Understanding the technical terminologies
 
@@ -154,6 +158,8 @@ Symbol | What it means
 :warning:| Warning.
 `add` | Words that have a grey highlighted background are commands that can be keyed into the command box.
 *italics* | Words in italics represent additional information.
+
+<div style="page-break-after: always;"></div>
 
 #### Understanding the usage of the commands
 
@@ -185,6 +191,8 @@ Symbol | What it means
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
+
 ## **Features**
 
 ### **Navigating InternHunter**
@@ -204,6 +212,8 @@ There are three `TYPE`s:
 
 `com` refers to Company tab, `app` refers to Application tab, `me` refers to Profile tab.
 
+<div style="page-break-after: always;"></div>
+
 Example:
 
 1. Suppose you want to switch tabs to the application tab. Executing `switch app` will switch the tabs to application tab.
@@ -214,6 +224,7 @@ Example:
 
 <p align="center"><img src="images/ug-general/switchAppResultAnnotated.png"/></p>
 
+<div style="page-break-after: always;"></div>
 
 ### **Company**
 
@@ -221,11 +232,15 @@ This represents a company, any company, but typically one you are interested in 
 You can record and maintain a company's name, phone number, email address, physical address, and its industry types.
 You can then specify what internships the company is offering by using the [internship commands](#internship).
 
+#### Command execution
+
 Note that all Company commands follow the following general 2-step process:
 
 Step 1: Enter the command into the command box. An example command is given in the image below.
 
 ![GeneralStep1MarkUp](images/ug-company/GeneralStep1MarkUp.png)
+
+<div style="page-break-after: always;"></div>
 
 Step 2: Press 'Enter' on your keyboard to execute the command. Upon successful execution, you will see the results of 
 your command reflected immediately in the app. An appropriate result message will also be displayed in the result 
@@ -249,6 +264,8 @@ display.
     include the company's location in their name (e.g. `n/Google Singapore` and `n/Google San Francisco`)!
   
 </div>
+
+<div style="page-break-after: always;"></div>
 
 #### Adding a company: `add com`
 
@@ -284,6 +301,8 @@ Format: `edit com INDEX [n/COMPANY_NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] 
 - When editing industry types, the existing industry types get removed i.e. industry types do not accumulate.
 - You can remove all of a company’s industry types by simply typing `t/` without specifying anything after it.
 
+<div style="page-break-after: always;"></div>
+
 Examples:
 - `edit com 2 p/61234567`
 - For the following example, executing `edit com 1 n/Google Singapore e/GoogleIsHiring@google.com t/Internet` will
@@ -292,6 +311,8 @@ Examples:
  
  *(Notice that by editing industry types, the existing industry types get replaced i.e. industry types do not
   accumulate)*
+
+<div style="page-break-after: always;"></div>
 
 #### Viewing a company's particulars in full: `view com`
 
@@ -304,6 +325,8 @@ Examples:
 - Suppose you are currently viewing the first company and you want to view the second company. Executing `view com 2` 
 will update the right panel to display the second company: <br />
    ![ViewCompany](images/ug-company/ViewCom.png) <br />
+
+<div style="page-break-after: always;"></div>
 
 #### Finding companies: `find com`
 
@@ -356,6 +379,7 @@ Example:
 Adds an internship to a company.
 
 Format: `add int INDEX j/JOB_TITLE [w/WAGE] [p/PERIOD] [r/REQUIREMENT]...`
+- `INDEX` refers to the index of the company in the company list.
 - `PERIOD` can refer to any word (e.g. `3 months`, `Summer break`, `Jun - Aug 2021`).
 - `WAGE` must be a positive integer (without leading zeroes or + symbol).
 
@@ -364,6 +388,8 @@ Examples:
 - `add int 1 j/Machine Learning Engineer w/4700` 
 
 ![AddInternship](images/AddInternship.png)
+
+<div style="page-break-after: always;"></div>
 
 #### Deleting an internship from a company: `delete int`
 
@@ -386,7 +412,9 @@ internship in the company’s list of internships.
 * At least one of the optional fields must be provided.
 * Existing values will be updated to the input values.
 * When editing `REQUIREMENTS`, all existing requirements get replaced by the new specified requirements.
-* You can remove all `REQUIREMENTS` by adding r/ without anything after it.
+* You can remove all `REQUIREMENTS` by adding `r/` without anything after it.
+
+<div style="page-break-after: always;"></div>
 
 Examples:
 - `edit int 3 i/1 j/Frontend Developer`
@@ -397,6 +425,8 @@ Examples:
 If an application is already created for the internship, it will also be edited as shown below:
 
 ![EditInternshipApplication](images/EditInternshipApplication.png)
+
+<div style="page-break-after: always;"></div>
 
 ### **Application**
 
@@ -438,9 +468,13 @@ Valid `STATUS_DATE` formats:
   
 </div>
 
+<div style="page-break-after: always;"></div>
+
 Here is how the application tab looks like: 
 
 <p align="center"><img src="images/ug-application/ApplicationAnnotated1.png" width="100%"/></p>
+
+<div style="page-break-after: always;"></div>
 
 #### Command execution
 
@@ -450,11 +484,15 @@ Step 1: Enter the command into the command box. An example command is given in t
 
 ![GeneralApplicationCommand1](images/ug-application/GeneralApplicationCommand01.png)
 
+<div style="page-break-after: always;"></div>
+
 Step 2: Press 'Enter' on your keyboard to execute the command. Upon successful execution, you will see the results of 
 your command reflected immediately in the app. An appropriate result message will also be displayed in the result 
 display.
 
 ![GeneralApplicationCommand2](images/ug-application/GeneralApplicationCommand02.png)
+
+<div style="page-break-after: always;"></div>
 
 #### Applying for an internship: `add app`
 
@@ -467,15 +505,17 @@ internship in the company’s internship list.
 
 <div markdown="span" class="alert alert-primary">
 
-  :bulb: **Tip:** The optional STATUS field can be used as freely as you want it too! Say you have applied and already
-  got the interview, you can immediately add the application with status <code>Interview</code> without needing to add
-  the application and update it afterwards.
+  :bulb: **Tip:** The optional <code>STATUS</code> field can be used as freely as you want it too! Say you have applied and already
+  got the interview for the internship, you can immediately add the application with status <code>Interview</code> without needing to add
+  the application and update it afterwards in a 2-step process.
      
 </div>
 
 Example:
 - Suppose you are interested in applying for the Software Engineer internship in Google Singapore:
 <p align="center"><img src="images/ug-application/Internship1.png" width="100%"/></p>
+
+<div style="page-break-after: always;"></div>
 
 Executing `add app 1 i/1 d/24-12-20` will apply for the internship as follows.
 Note that you will be automatically switched to the application tab to view the application made:
@@ -493,6 +533,8 @@ Executing `delete app 2` will delete the 2nd application and update the list to 
 
 <p align="center"><img src="images/ug-application/DeleteApplication.png" width="100%"/></p>
 
+<div style="page-break-after: always;"></div>
+
 #### Updating an application: `edit app`
 
 Updates an application in your list of applications.
@@ -506,6 +548,8 @@ for an interview on the 28 Dec 2020, 2pm. Executing `edit app 1 s/interview d/28
 application as follows:
 <p align="center"><img src="images/ug-application/EditApplication1.png" width="90%" height="90%"/></p>
 
+<div style="page-break-after: always;"></div>
+
 #### Viewing an application's details in full: `view app`
 
 Selects an application in the list of applications to show in detail on the right panel.
@@ -516,6 +560,10 @@ Example:
 - Suppose you are currently viewing the first application and you want to view the second application. 
 Executing `view app 2` will update the right panel to display the second application:
 <p align="center"><img src="images/ug-application/ViewApplication.png" width="90%" height="90%"/></p>
+
+<br/>
+<br/>
+<br/>
 
 #### Finding applications: `find app`
 
@@ -545,6 +593,8 @@ applications:
 
 <p align="center"><img src="images/ug-application/FindApplication1.png" width="100%"/></p>
 
+<div style="page-break-after: always;"></div>
+
 #### Listing all applications: `list app`
 
 Lists out **all** applications in your list of applications. After using the `find app` command, you would have likely
@@ -559,6 +609,8 @@ Example:
 **all** 4 applications in your list of applications:
 
 <p align="center"><img src="images/ug-application/ListApplication.png" width="100%"/></p>
+
+<div style="page-break-after: always;"></div>
 
 ### **Profile**
 
@@ -582,13 +634,22 @@ Each category is represented by the following icons in the UI:
 |`experience` | <img src="images/ug-profile/experience.png" width="10%" height="10%"/>
 |`skill`      | <img src="images/ug-profile/skills.png" width="10%" height="10%"/>
 
+<div markdown="span" class="alert alert-info">
+
+  :information_source: **Note:** category is case-insensitive.
+  
+</div>
 
 Each profile item also contains a `TITLE` that describes the item, and you can optionally 
 add additional `DESCRIPTOR`s to further describe the item in point form.
 
+<div style="page-break-after: always;"></div>
+
 Here is how the profile tab looks like: 
 
 <p align="center"><img src="images/ug-profile/ProfileOverview.png" width="100%"/></p>
+
+<div style="page-break-after: always;"></div>
 
 #### Command execution
 
@@ -597,6 +658,8 @@ Note that all Profile commands follow the following general 2-step process:
 Step 1: Enter the command into the command box. An example command is given in the image below.
 
 ![GeneralStepOneMarkUp](images/ug-profile/GeneralStepProfile.png)
+
+<div style="page-break-after: always;"></div>
 
 Step 2: Press 'Enter' on your keyboard to execute the command. Upon successful execution, you will see the results of 
 your command reflected immediately in the app. An appropriate result message will also be displayed in the result 
@@ -613,6 +676,8 @@ display.
      
 </div>
 
+<div style="page-break-after: always;"></div>
+
 #### Adding an item to your profile: `add me`
 
 Adds a profile item to your profile.
@@ -628,6 +693,8 @@ Examples:
  
 ![AddProfileSS](images/ug-profile/AddProfile.png)
 
+<div style="page-break-after: always;"></div>
+
 #### Deleting an item from your profile: `delete me`
 
 Deletes experience, skills or achievements from your profile.
@@ -639,6 +706,8 @@ Example:
 * Executing `delete me 2` on the following list will delete the 2nd profile item as follows: <br />
 
 ![DeleteProfile](images/ug-profile/DeleteProfile.png)
+
+<div style="page-break-after: always;"></div>
 
 #### Updating profile item details: `edit me`
 
@@ -657,6 +726,8 @@ Examples:
 ![EditProfile](images/ug-profile/EditProfile.png)<br />
  *(Note that the existing descriptors get replaced)*
  
+ <div style="page-break-after: always;"></div>
+
 #### Viewing a profile item's details in full: `view me`
 
 Selects an item in the profile to show in detail on the right panel.
@@ -669,6 +740,8 @@ Example:
 
 ![ViewProfile](images/ug-profile/ViewProfileThree.png)<br />
 *(As you can see the details of the third item can be seen in the right panel)*
+
+<div style="page-break-after: always;"></div>
 
 #### Finding items in profile: `find me`
 
@@ -701,6 +774,8 @@ Examples:
      ![FindProfileDouble](images/ug-profile/FindProfileDouble.png) <br />
      *(As you can see, the search results match at least one of the keywords specified regardless of its casing)*
 
+<div style="page-break-after: always;"></div>
+
 #### Listing all items in profile: `list me`
 
 Lists out all items in your profile. After using the `find me` command, you would have likely filtered 
@@ -714,6 +789,8 @@ Example:
  having executed a `find me` command, to view all the items in your profile list, execute `list me`: <br />
  ![ListProfile](images/ug-profile/ListProfile.png)
 
+<div style="page-break-after: always;"></div>
+
 ### **Finding the most suitable internships**
 
 #### Generating matching internships: `match`
@@ -722,15 +799,17 @@ Generates a list of internships that have requirements that matches your current
 
 Format: `match`
 - Only the `Requirement` field in the internships will be searched for.
-- Only profile items with `Skill` category will be used for matching.
-- An Internship with at least one `Requirement` matching any one `Skill` in the profile list will be
-considered as a successful match. e.g. Say you have a profile item which is of `Skill` category and titled `Python`, any
+- Only profile items with `skill` category will be used for matching.
+- An Internship with at least one `Requirement` matching any one `skill` in the profile list will be
+considered as a successful match. e.g. Say you have a profile item which is of `skill` category and titled `Python`, any
 internship that has a `Requirement` of `Python` will be successfully matched.
 - An Internship with no requirements will never be matched.
-- Matched internships can have `Requirements` that do not match with the profile `Skills`, since a match is found when
-an internship has **at least one and not all** `Requirements` that matches with the profile `Skills`.
+- Matched internships can have requirements that do not match with the profile skills, since a match is found when
+an internship has **at least one and not all** requirements that matches with the profile skills.
 - Matching done is case-insensitive. e.g. `Python` will match `python`.
 - Only the full phrase will be matched. e.g. `Machine` will not match `Machine Learning`.
+
+<div style="page-break-after: always;"></div>
 
 Example:
 
@@ -738,10 +817,14 @@ Example:
 
 <p align="center"><img src="images/ug-general/match-internships1.png" width="100%"/></p>
 
-2\. And this is your current profile item list. Note that only the 2 profile items of `Skill` type will be used for
+<div style="page-break-after: always;"></div>
+
+2\. And this is your current profile item list. Note that only the 2 profile items of `skill` type will be used for
 matching with the internships.
 
 <p align="center"><img src="images/ug-general/match-skills.png" width="100%"/></p>
+
+<div style="page-break-after: always;"></div>
 
 3\. All that's left to do is to type the `match` word in the command box.
 
@@ -753,6 +836,8 @@ matching with the internships.
 
 </div>
 
+<div style="page-break-after: always;"></div>
+
 4\. A pop-up window showing the list of matching internships will be displayed!
 
 <p align="center"><img src="images/ug-general/match-window1.png" width="100%"/></p>
@@ -762,6 +847,8 @@ matching with the internships.
   :bulb: **Tip:** You can press Esc key to close the popup window!
   
 </div>
+
+<div style="page-break-after: always;"></div>
 
 ### **General**
 
@@ -781,11 +868,15 @@ Example:
 
 1. Suppose you want to clear all your data in InternHunter. Executing `clear` will clear all the data.
 
-<p align="center"><img src="images/ug-general/clear.png" width="70%" height="70%"/></p>
+<p align="center"><img src="images/ug-general/clear.png" /></p>
+
+<div style="page-break-after: always;"></div>
 
 2\. Note that all the data has been wiped as seen in the Ui.
 
-<p align="center"><img src="images/ug-general/clearResult.png" width="70%" height="70%"/></p>
+<p align="center"><img src="images/ug-general/clearResult.png" /></p>
+
+<div style="page-break-after: always;"></div>
 
 #### Viewing help: `help`
 
@@ -804,13 +895,15 @@ Example:
 
 1. Suppose you can't remember the commands. Fret not, executing `help` will generate a new window containing the link to the user guide!
 
-<p align="center"><img src="images/ug-general/help.png" width="70%" height="70%"/></p>
+<p align="center"><img src="images/ug-general/help.png" /></p>
+
+<div style="page-break-after: always;"></div>
 
 2\. Copy the link and access our user guide for more information.
 
-<p align="center"><img src="images/ug-general/helpResult.png" width="70%" height="70%"/></p>
+<p align="center"><img src="images/ug-general/helpResult.png" /></p>
 
-
+<div style="page-break-after: always;"></div>
 
 #### Exiting the program: `exit`
 
@@ -826,19 +919,23 @@ Format: `exit`
   
 </div>
 
-<br/>
+<div style="page-break-after: always;"></div>
 
 Example:
 
 1. Suppose you want to exit InternHunter without clicking the cross button, executing `exit` will generate a new window to confirm your request of exiting.
 
-<p align="center"><img src="images/ug-general/exit.png" width="70%" height="70%"/></p>
+<p align="center"><img src="images/ug-general/exit.png" /></p>
+
+<div style="page-break-after: always;"></div>
 
 2\. At this stage, you have the option to confirm the exit or continue to stay in InternHunter.
 
-<p align="center"><img src="images/ug-general/exitResult.png" width="70%" height="70%"/></p>
+<p align="center"><img src="images/ug-general/exitResult.png" /></p>
 
 --------------------------------------------------------------------------------------------------------------------
+
+<div style="page-break-after: always;"></div>
 
 ## **FAQ**
 
@@ -868,6 +965,7 @@ Make sure your json files are in the correct folder and format. If not, InternHu
 
 --------------------------------------------------------------------------------------------------------------------
 
+<div style="page-break-after: always;"></div>
 
 ## **Command summary**
 
@@ -889,6 +987,8 @@ Action     | Format
 **Find**   | `find com KEYWORD [ANOTHER_KEYWORD]...`
 **List**   | `list com`
 
+<div style="page-break-after: always;"></div>
+
 ### Internship
 
 Action     | Format
@@ -907,6 +1007,8 @@ Action     | Format
 **View**   | `view app INDEX`
 **Find**   | `find app KEYWORD [ANOTHER_KEYWORD]...`
 **List**   | `list app`
+
+<div style="page-break-after: always;"></div>
 
 ### Profile
 

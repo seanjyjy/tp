@@ -2,7 +2,6 @@ package seedu.internhunter.model.company;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.internhunter.testutil.Assert.assertThrows;
 import static seedu.internhunter.testutil.company.CompanyItemFieldsUtil.INVALID_EMAIL_BLANK;
@@ -121,14 +120,21 @@ public class EmailTest {
 
     @Test
     public void equals_equalityTest_success() {
-        assertEquals(VALID_EMAIL_ONE, VALID_EMAIL_ONE);
+        // same object -> return true
+        assertTrue(VALID_EMAIL_ONE.equals(VALID_EMAIL_ONE));
         Email emailCopy = new Email(VALID_EMAIL_GOLDMAN);
-        assertEquals(VALID_EMAIL_ONE, emailCopy);
+        // same value -> return true
+        assertTrue(VALID_EMAIL_ONE.equals(emailCopy));
     }
 
     @Test
     public void equals_nonEqualityTest_success() {
-        assertNotEquals(VALID_EMAIL_ONE, VALID_EMAIL_TWO);
+        // different value -> return false
+        assertFalse(VALID_EMAIL_ONE.equals(VALID_EMAIL_TWO));
+        // null -> return true
+        assertFalse(VALID_EMAIL_ONE.equals(null));
+        // different types -> return false
+        assertFalse(VALID_EMAIL_ONE.equals(0.5f));
     }
 
     @Test

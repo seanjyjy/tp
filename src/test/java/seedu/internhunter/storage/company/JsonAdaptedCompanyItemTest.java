@@ -29,6 +29,7 @@ import org.junit.jupiter.api.Test;
 
 import seedu.internhunter.commons.exceptions.IllegalValueException;
 import seedu.internhunter.model.company.Address;
+import seedu.internhunter.model.company.CompanyItem;
 import seedu.internhunter.model.company.CompanyName;
 import seedu.internhunter.model.company.Email;
 import seedu.internhunter.model.company.Industry;
@@ -149,6 +150,8 @@ public class JsonAdaptedCompanyItemTest {
     @Test
     public void constructor_nullInput_throwsAssertionError() {
         assertThrows(AssertionError.class, () -> new JsonAdaptedCompanyItem(null));
+        CompanyItem companyItem = null;
+        assertThrows(AssertionError.class, () -> new JsonAdaptedCompanyItem(companyItem));
     }
 
 }

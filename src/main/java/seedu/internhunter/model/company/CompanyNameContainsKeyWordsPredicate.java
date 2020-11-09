@@ -6,11 +6,16 @@ import java.util.function.Predicate;
 import seedu.internhunter.commons.util.StringUtil;
 
 /**
- * todo javadocs
+ * Tests that a {@code CompanyItem}'s {@code CompanyName} matches any of the keywords given.
  */
 public class CompanyNameContainsKeyWordsPredicate implements Predicate<CompanyItem> {
     private final List<String> keywords;
 
+    /**
+     * Constructs a {@code CompanyNameContainsKeyWordsPredicate}.
+     *
+     * @param keywords The keywords to check against.
+     */
     public CompanyNameContainsKeyWordsPredicate(List<String> keywords) {
         this.keywords = keywords;
     }

@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.internhunter.model.util.DateUtil.DATE_INPUT_FORMAT;
 import static seedu.internhunter.model.util.DateUtil.DATE_TIME_INPUT_FORMAT;
 import static seedu.internhunter.model.util.DateUtil.DEFAULT_TIME;
-import static seedu.internhunter.model.util.DateUtil.ERROR_MESSAGE;
 import static seedu.internhunter.model.util.DateUtil.convertOutputFormat;
 import static seedu.internhunter.model.util.DateUtil.convertToDateTime;
 import static seedu.internhunter.model.util.DateUtil.extractDayAndMonth;
@@ -87,10 +86,10 @@ public class DateUtilTest {
 
     @Test
     public void convertToDateTime_invalidFormats_throwsAssertionError() {
-        assertThrows(AssertionError.class, ERROR_MESSAGE, () -> convertToDateTime(INVALID_DATE_TIME_ONE));
-        assertThrows(AssertionError.class, ERROR_MESSAGE, () -> convertToDateTime(INVALID_DATE_TIME_TWO));
-        assertThrows(AssertionError.class, ERROR_MESSAGE, () -> convertToDateTime(INVALID_DATE_ONE));
-        assertThrows(AssertionError.class, ERROR_MESSAGE, () -> convertToDateTime(INVALID_DATE_TWO));
+        assertThrows(AssertionError.class, DateUtil.ERROR_MESSAGE, () -> convertToDateTime(INVALID_DATE_TIME_ONE));
+        assertThrows(AssertionError.class, DateUtil.ERROR_MESSAGE, () -> convertToDateTime(INVALID_DATE_TIME_TWO));
+        assertThrows(AssertionError.class, DateUtil.ERROR_MESSAGE, () -> convertToDateTime(INVALID_DATE_ONE));
+        assertThrows(AssertionError.class, DateUtil.ERROR_MESSAGE, () -> convertToDateTime(INVALID_DATE_TWO));
     }
 
     @Test

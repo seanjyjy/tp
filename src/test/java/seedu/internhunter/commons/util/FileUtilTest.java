@@ -29,6 +29,9 @@ public class FileUtilTest {
     public void isFileExists_null_false() {
         Path path = Paths.get("valid/file/path/data"); // valid file path but doesnt exist
         assertFalse(isFileExists(path));
+        Path pathExist = Paths.get("src", "test", "data", "JsonSerializableApplicationItemListTest")
+            .resolve("sampleApplicationItemList.json");
+        assertTrue(isFileExists(pathExist));
     }
 
 }

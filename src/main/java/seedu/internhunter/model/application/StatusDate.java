@@ -20,7 +20,7 @@ public class StatusDate {
     private final LocalDateTime statusDate;
 
     /**
-     * Constructs an {@code StatusDate}.
+     * Constructs a {@code StatusDate}.
      *
      * @param statusDate A valid statusDate.
      */

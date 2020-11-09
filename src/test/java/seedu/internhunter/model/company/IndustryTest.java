@@ -2,7 +2,6 @@ package seedu.internhunter.model.company;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.internhunter.testutil.Assert.assertThrows;
 import static seedu.internhunter.testutil.company.CompanyItemFieldsUtil
@@ -78,14 +77,21 @@ public class IndustryTest {
 
     @Test
     public void equals_equalityTest_success() {
-        assertEquals(VALID_INDUSTRY_ONE, VALID_INDUSTRY_ONE);
+        // same object -> return true
+        assertTrue(VALID_INDUSTRY_ONE.equals(VALID_INDUSTRY_ONE));
         Industry industryCopy = new Industry(VALID_INDUSTRY_SOCIAL_MEDIA);
-        assertEquals(VALID_INDUSTRY_ONE, industryCopy);
+        // same value -> return true
+        assertTrue(VALID_INDUSTRY_ONE.equals(industryCopy));
     }
 
     @Test
     public void equals_nonEqualityTest_success() {
-        assertNotEquals(VALID_INDUSTRY_ONE, VALID_INDUSTRY_TWO);
+        // different values -> return false
+        assertFalse(VALID_INDUSTRY_ONE.equals(VALID_INDUSTRY_TWO));
+        // null -> return true
+        assertFalse(VALID_INDUSTRY_ONE.equals(null));
+        // different types -> return false
+        assertFalse(VALID_INDUSTRY_ONE.equals(0.5f));
     }
 
     @Test

@@ -2,7 +2,6 @@ package seedu.internhunter.model.company;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static seedu.internhunter.testutil.Assert.assertThrows;
 import static seedu.internhunter.testutil.company.CompanyItemFieldsUtil.INVALID_COMPANY_NAME_BLANK;
@@ -78,14 +77,21 @@ public class CompanyNameTest {
 
     @Test
     public void equals_equalityTest_success() {
-        assertEquals(VALID_COMPANY_NAME_ONE, VALID_COMPANY_NAME_ONE);
+        // same object -> return true
+        assertTrue(VALID_COMPANY_NAME_ONE.equals(VALID_COMPANY_NAME_ONE));
         CompanyName companyNameCopy = new CompanyName(VALID_COMPANY_NAME_FACEBOOK);
-        assertEquals(VALID_COMPANY_NAME_ONE, companyNameCopy);
+        // same value -> return true
+        assertTrue(VALID_COMPANY_NAME_ONE.equals(companyNameCopy));
     }
 
     @Test
     public void equals_nonEqualityTest_success() {
-        assertNotEquals(VALID_COMPANY_NAME_ONE, VALID_COMPANY_NAME_TWO);
+        // different values -> return false
+        assertFalse(VALID_COMPANY_NAME_ONE.equals(VALID_COMPANY_NAME_TWO));
+        // null -> return false
+        assertFalse(VALID_COMPANY_NAME_ONE.equals(null));
+        // different types -> return false
+        assertFalse(VALID_COMPANY_NAME_ONE.equals(0.5f));
     }
 
     @Test

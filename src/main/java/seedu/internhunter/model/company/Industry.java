@@ -3,8 +3,8 @@ package seedu.internhunter.model.company;
 import seedu.internhunter.model.wrapper.AlphaNumericWord;
 
 /**
- * Represents a Tag in the address book. TODO: Javadocs (Shawn)
- * Guarantees: immutable; name is valid as declared in {@link #isValidAlphaNumericWord(String)}
+ * Represents a Company's industry type(s).
+ * Guarantees: immutable; is valid as declared in {@link #isValidAlphaNumericWord(String)}
  */
 public class Industry extends AlphaNumericWord {
 
@@ -12,7 +12,7 @@ public class Industry extends AlphaNumericWord {
             + "spaces, and it should not be blank";
 
     /**
-     * Constructs a {@code Industry}.
+     * Constructs an {@code Industry}.
      *
      * @param industryType A valid industry type.
      */
@@ -21,7 +21,10 @@ public class Industry extends AlphaNumericWord {
     }
 
     /**
-     * Returns true if a given string is a valid industry name.
+     * Checks if the test string is a valid industry based on {@code #isValidAlphaNumericWord(String)}.
+     *
+     * @param test The string to test.
+     * @return True if test string has a valid input format, false otherwise.
      */
     public static boolean isValidIndustryName(String test) {
         return isValidAlphaNumericWord(test);
