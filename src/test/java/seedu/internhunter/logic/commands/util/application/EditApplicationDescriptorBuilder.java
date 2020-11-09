@@ -13,10 +13,18 @@ public class EditApplicationDescriptorBuilder {
 
     private final EditApplicationDescriptor descriptor;
 
+    /**
+     * Constructs an {@code EditApplicationDescriptorBuilder}.
+     */
     public EditApplicationDescriptorBuilder() {
         descriptor = new EditApplicationDescriptor();
     }
 
+    /**
+     * Constructs an {@code EditApplicationDescriptorBuilder} with the given {@code EditApplicationDescriptorBuilder}.
+     *
+     * @param descriptor The details to edit the application with.
+     */
     public EditApplicationDescriptorBuilder(EditApplicationDescriptor descriptor) {
         this.descriptor = new EditApplicationDescriptor(descriptor);
     }
@@ -46,7 +54,13 @@ public class EditApplicationDescriptorBuilder {
         return this;
     }
 
+    /**
+     * Returns the descriptor.
+     *
+     * @return The descriptor.
+     */
     public EditApplicationDescriptor build() {
         return descriptor;
     }
+
 }
