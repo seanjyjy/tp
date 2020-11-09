@@ -25,7 +25,7 @@ import seedu.internhunter.model.company.Industry;
 import seedu.internhunter.model.company.Phone;
 
 /**
- * Parses input arguments and creates a new AddCompanyCommand object. todo javadocs (shawn)
+ * Parses input arguments and creates a new AddCompanyCommand object.
  */
 public class AddCompanyCommandParser implements Parser<AddCompanyCommand> {
 

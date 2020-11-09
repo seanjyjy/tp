@@ -16,6 +16,9 @@ import seedu.internhunter.model.Model;
 import seedu.internhunter.model.company.CompanyItem;
 import seedu.internhunter.ui.tabs.TabName;
 
+/**
+ * Views a Company in the Model's Company list.
+ */
 public class ViewCompanyCommand extends ViewCommand {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
@@ -30,7 +33,11 @@ public class ViewCompanyCommand extends ViewCommand {
     private final String messageAlreadyViewing;
     private final Index targetIndex;
 
-    /** todo javadocs (shawn) */
+    /**
+     * Creates a ViewCompanyCommand to view the specified {@code CompanyItem}.
+     *
+     * @param targetIndex of the company in the company list to view.
+     */
     public ViewCompanyCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
         this.messageViewSuccess = String.format(MESSAGE_VIEW_SUCCESS, COMPANY_NAME, targetIndex);
@@ -39,10 +46,9 @@ public class ViewCompanyCommand extends ViewCommand {
 
     /**
      * Executes the view company command and returns the result message.
-     * This command also auto-switches the user to the company tab.
      *
      * @param model {@code Model} which the command should operate on.
-     * @return feedback message of the operation result for display
+     * @return Feedback message of the operation result for display.
      * @throws CommandException If an error occurs during command execution.
      */
     @Override

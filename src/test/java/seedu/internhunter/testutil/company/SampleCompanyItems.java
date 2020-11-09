@@ -36,7 +36,7 @@ import seedu.internhunter.model.company.CompanyItem;
 import seedu.internhunter.model.item.ItemList;
 
 /**
- * A utility class containing a list of {@code InternshipItem} objects to be used in tests. todo javadocs shawn
+ * A utility class containing a list of {@code CompanyItem} objects to be used in tests.
  */
 public abstract class SampleCompanyItems {
 
@@ -78,7 +78,9 @@ public abstract class SampleCompanyItems {
             .build();
 
     /**
-     * Returns an {@code ItemList<InternshipItem>} with all the sample internship items.
+     * Returns an {@code ItemList<CompanyItem>} with some sample company items.
+     *
+     * @return An {@code ItemList<CompanyItem>} with some sample company items.
      */
     public static ItemList<CompanyItem> getSampleCompanyList() {
         ItemList<CompanyItem> companyItemList = new ItemList<>();
@@ -88,6 +90,11 @@ public abstract class SampleCompanyItems {
         return companyItemList;
     }
 
+    /**
+     * Returns a {@code List<CompanyItem>} with some sample company items.
+     *
+     * @return A {@code List<CompanyItem>} with some sample company items.
+     */
     public static List<CompanyItem> getCompanyItems() {
         return new ArrayList<>(Arrays.asList(new CompanyItemBuilder(GOOGLE).build(),
                 new CompanyItemBuilder(GOLDMAN).build(), new CompanyItemBuilder(FACEBOOK).build()));

@@ -19,7 +19,7 @@ import seedu.internhunter.model.company.Phone;
 import seedu.internhunter.model.internship.InternshipItem;
 
 /**
- * A utility class to help with building CompanyItem objects. todo javadocs shawn
+ * A utility class to help with building CompanyItem objects.
  */
 public class CompanyItemBuilder {
 
@@ -38,7 +38,7 @@ public class CompanyItemBuilder {
 
 
     /**
-     * Creates a {@code InternshipItemBuilder} with the default details.
+     * Creates a {@code CompanyItemBuilder} with the default details.
      */
     public CompanyItemBuilder() {
         companyName = new CompanyName(DEFAULT_COMPANY_NAME);
@@ -50,7 +50,7 @@ public class CompanyItemBuilder {
     }
 
     /**
-     * Initializes the InternshipItemBuilder with the data of {@code internshipToCopy}.
+     * Initializes the CompanyItemBuilder with the data of {@code companyToCopy}.
      */
     public CompanyItemBuilder(CompanyItem companyToCopy) {
         requireNonNull(companyToCopy);
@@ -63,7 +63,10 @@ public class CompanyItemBuilder {
     }
 
     /**
-     * Sets the {@code CompanyName} of the {@code InternshipItem} that we are building.
+     * Sets the {@code CompanyName} of the {@code CompanyItem} that we are building.
+     *
+     * @param companyName The company name to set.
+     * @return The builder with the company name set.
      */
     public CompanyItemBuilder withCompanyName(String companyName) {
         requireNonNull(companyName);
@@ -72,7 +75,10 @@ public class CompanyItemBuilder {
     }
 
     /**
-     * Sets the {@code JobTitle} of the {@code InternshipItem} that we are building.
+     * Sets the {@code Phone} of the {@code CompanyItem} that we are building.
+     *
+     * @param phone The phone to set.
+     * @return The builder with the phone set.
      */
     public CompanyItemBuilder withPhone(String phone) {
         requireNonNull(phone);
@@ -81,7 +87,10 @@ public class CompanyItemBuilder {
     }
 
     /**
-     * Sets the {@code Period} of the {@code InternshipItem} that we are building.
+     * Sets the {@code Email} of the {@code CompanyItem} that we are building.
+     *
+     * @param email The email to set.
+     * @return The builder with the email set.
      */
     public CompanyItemBuilder withEmail(String email) {
         requireNonNull(email);
@@ -90,7 +99,10 @@ public class CompanyItemBuilder {
     }
 
     /**
-     * Sets the {@code Wage} of the {@code InternshipItem} that we are building.
+     * Sets the {@code Address} of the {@code CompanyItem} that we are building.
+     *
+     * @param address The address to set.
+     * @return The builder with the address set.
      */
     public CompanyItemBuilder withAddress(String address) {
         requireNonNull(address);
@@ -99,8 +111,10 @@ public class CompanyItemBuilder {
     }
 
     /**
-     * Parses the {@code requirements} into a {@code Set<Requirement>}
-     * and set it to the {@code InternshipItem} that we are building.
+     * Sets the {@code Industry} set of the {@code CompanyItem} that we are building.
+     *
+     * @param industries The industries to set.
+     * @return The builder with the industries set.
      */
     public CompanyItemBuilder withIndustries(String... industries) {
         requireNonNull(industries);
@@ -109,7 +123,10 @@ public class CompanyItemBuilder {
     }
 
     /**
-     * todo javadocs shawn
+     * Sets the {@code Internship} list of the {@code CompanyItem} that we are building.
+     *
+     * @param internships The internships to set.
+     * @return The builder with the internships set.
      */
     public CompanyItemBuilder withInternships(InternshipItem... internships) {
         requireNonNull(internships);
@@ -118,14 +135,17 @@ public class CompanyItemBuilder {
     }
 
     /**
-     * todo javadocs shawn
+     * Creates a company based on the company fields stored in the builder.
      */
     public CompanyItem build() {
         return new CompanyItem(companyName, phone, email, address, industries, internships);
     }
 
     /**
-     * Returns a set of requirements containing the list of strings given.
+     * Returns a set of industries containing the list of strings given.
+     *
+     * @param strings Representative of industries.
+     * @return A set of industries containing the list of strings given.
      */
     private Set<Industry> getIndustrySet(String... strings) {
         return Arrays.stream(strings)

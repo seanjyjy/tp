@@ -20,7 +20,7 @@ import seedu.internhunter.model.company.CompanyItem;
 import seedu.internhunter.ui.tabs.TabName;
 
 /**
- * Adds a Company to the Model's Company list. todo javadocs (shawn)
+ * Adds a Company to the Model's Company list.
  */
 public class AddCompanyCommand extends AddCommand {
 
@@ -43,13 +43,22 @@ public class AddCompanyCommand extends AddCommand {
     private final CompanyItem toAdd;
 
     /**
-     * Creates an AddCompanyCommand to add the specified {@code CompanyItem}
+     * Creates an AddCompanyCommand to add the specified {@code CompanyItem}.
+     *
+     * @param company The Company to be added.
      */
     public AddCompanyCommand(CompanyItem company) {
         requireNonNull(company);
         toAdd = company;
     }
 
+    /**
+     * Executes the AddCompanyCommand and returns the result message.
+     *
+     * @param model {@code Model} which the command should operate on.
+     * @return Feedback message of the operation result for display.
+     * @throws CommandException If an error occurs during command execution.
+     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);

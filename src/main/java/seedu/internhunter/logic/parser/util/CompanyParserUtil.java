@@ -14,15 +14,17 @@ import seedu.internhunter.model.company.Industry;
 import seedu.internhunter.model.company.Phone;
 
 /**
- * Contains utility methods used for parsing strings in the various *Parser classes. todo javadocs (shawn)
+ * Contains utility methods used for parsing all the fields in a CompanyItem.
  */
 public class CompanyParserUtil {
 
     /**
-     * Parses a {@code String name} into a {@code Name}.
+     * Parses a {@code String companyName} into a {@code CompanyName}.
      * Leading and trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code name} is invalid.
+     * @param companyName The string to parse into a CompanyName.
+     * @return CompanyName parsed from the string.
+     * @throws ParseException if the given {@code companyName} is invalid.
      */
     public static CompanyName parseCompanyName(String companyName) throws ParseException {
         requireNonNull(companyName);
@@ -37,6 +39,8 @@ public class CompanyParserUtil {
      * Parses a {@code String phone} into a {@code Phone}.
      * Leading and trailing whitespaces will be trimmed.
      *
+     * @param phone The string to parse into a Phone.
+     * @return Phone parsed from the string.
      * @throws ParseException if the given {@code phone} is invalid.
      */
     public static Phone parsePhone(String phone) throws ParseException {
@@ -52,6 +56,8 @@ public class CompanyParserUtil {
      * Parses a {@code String email} into an {@code Email}.
      * Leading and trailing whitespaces will be trimmed.
      *
+     * @param email The string to parse into an Email.
+     * @return Email parsed from the string.
      * @throws ParseException if the given {@code email} is invalid.
      */
     public static Email parseEmail(String email) throws ParseException {
@@ -67,6 +73,8 @@ public class CompanyParserUtil {
      * Parses a {@code String address} into an {@code Address}.
      * Leading and trailing whitespaces will be trimmed.
      *
+     * @param address The string to parse into an Address.
+     * @return Address parsed from the string.
      * @throws ParseException if the given {@code address} is invalid.
      */
     public static Address parseAddress(String address) throws ParseException {
@@ -78,11 +86,13 @@ public class CompanyParserUtil {
         return new Address(trimmedAddress);
     }
 
-    /** todo javadocs (shawn)
-     * Parses a {@code String tag} into a {@code Tag}.
+    /**
+     * Parses a {@code String industry} into an {@code Industry}.
      * Leading and trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code tag} is invalid.
+     * @param industry The string to parse into an Industry.
+     * @return Industry parsed from the string.
+     * @throws ParseException if the given {@code industry} is invalid.
      */
     public static Industry parseIndustry(String industry) throws ParseException {
         requireNonNull(industry);
@@ -93,8 +103,12 @@ public class CompanyParserUtil {
         return new Industry(trimmedIndustry);
     }
 
-    /** todo javadocs (shawn)
-     * Parses {@code Collection<String> tags} into a {@code Set<Tag>}.
+    /**
+     * Parses {@code Collection<String> industries} into a {@code Set<Industry>}.
+     *
+     * @param industries The collection of industry strings to parse into a {@code Set<Industry>}.
+     * @return {@code Set<Industry>} parsed from the collection of industry strings.
+     * @throws ParseException if the given {@code industries} collection is invalid.
      */
     public static Set<Industry> parseIndustries(Collection<String> industries) throws ParseException {
         requireNonNull(industries);

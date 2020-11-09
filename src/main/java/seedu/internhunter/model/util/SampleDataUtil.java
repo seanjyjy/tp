@@ -26,7 +26,7 @@ import seedu.internhunter.model.profile.ProfileItemCategory;
 import seedu.internhunter.model.profile.Title;
 
 /**
- * Contains utility methods for populating {@code AddressBook} with sample data.
+ * Contains utility methods for populating {@code InternHunter} with sample data.
  */
 public class SampleDataUtil {
 

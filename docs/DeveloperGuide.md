@@ -1169,11 +1169,11 @@ testers are expected to do more *exploratory* testing.
 
 **Adding a company**
 
-1. Adding a company called garena with its non-optional relevant fields such as address being `201 Victoria St`, email being `garenaHires@garena.com` and phone number being `65093545`.
+1. Adding a company called Amazon with its non-optional relevant fields such as address being `201 Victoria St`, email being `AmazonHires@amazon.com` and phone number being `65000545`.
 
-   1. Prerequisites: Garena not already added in InternHunter.
+   1. Prerequisites: Amazon not already added in InternHunter.
 
-   1. Test case: `add com n/Amazon a/201 Victoria St e/AmazonHires@gamazon.com p/65000545`  <br>
+   1. Test case: `add com n/Amazon a/201 Victoria St e/AmazonHires@amazon.com p/65000545`  <br>
       Expected: A card displaying information of the company is added. The right display will show full information of the company added.
       
    1. Test case: `add com n/Google Florida a/101 Tampines St e/GoogleHires@google.com p/62343434 t/Cloud Computing t/Artificial Intelligence` <br>
@@ -1450,7 +1450,7 @@ testers are expected to do more *exploratory* testing.
    Expected: An error message informing you that index is not a non-zero unsigned integer. The command box text will turn red to inform you of the invalid command.
    
    1. Test case: `delete app` <br>
-   Expected: Expected: An error message will be shown, showing information of how this command should be entered. The command box text will turn red to inform you of the invalid command.
+   Expected: An error message will be shown, showing information of how this command should be entered. The command box text will turn red to inform you of the invalid command.
 
 **Deleting a profile item**
 
@@ -1465,7 +1465,7 @@ testers are expected to do more *exploratory* testing.
    Expected: An error message informing you that index is not a non-zero unsigned integer. The command box text will turn red to inform you of the invalid command.
    
    1. Test case: `delete me` <br>
-   Expected: Expected: An error message will be shown, showing information of how this command should be entered. The command box text will turn red to inform you of the invalid command.
+   Expected: An error message will be shown, showing information of how this command should be entered. The command box text will turn red to inform you of the invalid command.
 
 **Switching of tabs**
 

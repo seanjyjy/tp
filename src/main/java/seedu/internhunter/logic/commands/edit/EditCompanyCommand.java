@@ -34,7 +34,9 @@ import seedu.internhunter.model.company.Phone;
 import seedu.internhunter.model.internship.InternshipItem;
 import seedu.internhunter.ui.tabs.TabName;
 
-/** todo javadocs (shawn) */
+/**
+ * Edits a Company in the Model's Company list.
+ */
 public class EditCompanyCommand extends EditCommand {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + " " + COMPANY_ALIAS
@@ -57,9 +59,11 @@ public class EditCompanyCommand extends EditCommand {
     private final Index index;
     private final EditCompanyDescriptor editCompanyDescriptor;
 
-    /** todo javadocs (shawn)
-     * @param index of the person in the filtered person list to edit
-     * @param editCompanyDescriptor details to edit the person with
+    /**
+     * Creates an EditCompanyCommand to edit the specified {@code CompanyItem}.
+     *
+     * @param index of the company in the company list to edit.
+     * @param editCompanyDescriptor The details to edit the company with.
      */
     public EditCompanyCommand(Index index, EditCompanyDescriptor editCompanyDescriptor) {
         requireNonNull(index);
@@ -69,6 +73,13 @@ public class EditCompanyCommand extends EditCommand {
         this.editCompanyDescriptor = new EditCompanyDescriptor(editCompanyDescriptor);
     }
 
+    /**
+     * Executes the EditCompanyCommand and returns the result message.
+     *
+     * @param model {@code Model} which the command should operate on.
+     * @return Feedback message of the operation result for display.
+     * @throws CommandException If an error occurs during command execution.
+     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
@@ -86,8 +97,12 @@ public class EditCompanyCommand extends EditCommand {
     }
 
     /**
-     * Creates and returns a {@code Person} with the details of {@code personToEdit}
-     * edited with {@code editPersonDescriptor}.
+     * Creates and returns a {@code CompanyItem} with the details of {@code companyToEdit}
+     * edited with {@code editCompanyDescriptor}.
+     *
+     * @param companyToEdit The company to edit.
+     * @param editCompanyDescriptor The details to edit the company with.
+     * @return The edited company.
      */
     private static CompanyItem createEditedCompany(CompanyItem companyToEdit,
             EditCompanyDescriptor editCompanyDescriptor) {
@@ -125,8 +140,8 @@ public class EditCompanyCommand extends EditCommand {
     }
 
     /**
-     * Stores the details to edit the person with. Each non-empty field value will replace the
-     * corresponding field value of the person.
+     * Stores the details to edit the company with. Each non-empty field value will replace the
+     * corresponding field value of the company.
      */
     public static class EditCompanyDescriptor {
         private CompanyName name;
@@ -140,7 +155,6 @@ public class EditCompanyCommand extends EditCommand {
 
         /**
          * Copy constructor.
-         * A defensive copy of {@code tags} is used internally.
          */
         public EditCompanyDescriptor(EditCompanyDescriptor toCopy) {
             setName(toCopy.name);
@@ -190,17 +204,16 @@ public class EditCompanyCommand extends EditCommand {
         }
 
         /**
-         * Sets {@code tags} to this object's {@code tags}.
-         * A defensive copy of {@code tags} is used internally.
+         * Sets {@code industries} to this object's {@code industries}.
          */
         public void setIndustries(Set<Industry> industries) {
             this.industries = (industries != null) ? new HashSet<>(industries) : null;
         }
 
         /**
-         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * Returns an unmodifiable industry set, which throws {@code UnsupportedOperationException}
          * if modification is attempted.
-         * Returns {@code Optional#empty()} if {@code tags} is null.
+         * Returns {@code Optional#empty()} if {@code industries} is null.
          */
         public Optional<Set<Industry>> getIndustries() {
             return (industries != null) ? Optional.of(Collections.unmodifiableSet(industries)) : Optional.empty();

@@ -33,7 +33,7 @@ public class DeleteApplicationCommand extends DeleteCommand {
     /**
      * Creates an DeleteApplicationCommand to delete the specified {@code ApplicationItem}.
      *
-     * @param targetIndex Target index of the
+     * @param targetIndex Target index of the application to be deleted in the application list.
      */
     public DeleteApplicationCommand(Index targetIndex) {
         this.targetIndex = targetIndex;

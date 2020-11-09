@@ -12,12 +12,18 @@ import seedu.internhunter.model.Model;
 import seedu.internhunter.ui.tabs.TabName;
 
 /**
- * todo javadocs
+ * Lists all company items in InternHunter to the user.
  */
 public class ListCompanyCommand extends ListCommand {
 
     public static final String MESSAGE_SUCCESS = String.format(MESSAGE_LIST_SUCCESS, COMPANY_NAME);
 
+    /**
+     * Executes the list company command and returns the result message.
+     *
+     * @param model {@code Model} which the command should operate on.
+     * @return Feedback message of the operation result for display.
+     */
     @Override
     public CommandResult execute(Model model) {
         requireNonNull(model);
