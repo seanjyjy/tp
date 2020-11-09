@@ -22,7 +22,7 @@ public class ViewCompanyCommandParser implements Parser<ViewCompanyCommand> {
      * and returns a ViewCompanyCommand object for execution.
      *
      * @param args Arguments to be parsed.
-     * @return ViewCompanyCommand object for execution
+     * @return ViewCompanyCommand object for execution.
      * @throws ParseException if the user input does not conform to the expected format.
      */
     public ViewCompanyCommand parse(String args) throws ParseException {

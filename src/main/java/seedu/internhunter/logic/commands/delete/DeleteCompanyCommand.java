@@ -15,7 +15,7 @@ import seedu.internhunter.model.company.CompanyItem;
 import seedu.internhunter.ui.tabs.TabName;
 
 /**
- * Deletes a Company from the Model's Company list. todo javadocs (shawn)
+ * Deletes a Company from the Model's Company list.
  */
 public class DeleteCompanyCommand extends DeleteCommand {
 
@@ -30,10 +30,22 @@ public class DeleteCompanyCommand extends DeleteCommand {
 
     private final Index targetIndex;
 
+    /**
+     * Creates a DeleteCompanyCommand to delete the {@code CompanyItem} specified by the given index.
+     *
+     * @param targetIndex Target index of the company to be deleted in the company list.
+     */
     public DeleteCompanyCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
     }
 
+    /**
+     * Executes the DeleteCompanyCommand and returns the result message.
+     *
+     * @param model {@code Model} which the command should operate on.
+     * @return Feedback message of the operation result for display.
+     * @throws CommandException If an error occurs during command execution.
+     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
@@ -50,6 +62,13 @@ public class DeleteCompanyCommand extends DeleteCommand {
         return getCommandResult(model, deleteSuccessMessage, currentTabName, TabName.COMPANY, targetIndex);
     }
 
+    /**
+     * Deletes all internships in the company's internship list.
+     *
+     * @param model {@code Model} which the command should operate on.
+     * @param company {@code Company} from which the internships should be deleted.
+     * @throws CommandException If an error occurs during command execution.
+     */
     private void deleteAllInternshipsInCompany(Model model, CompanyItem company) throws CommandException {
         int numberOfInternships = company.getNumberOfInternships();
         for (int i = 0; i < numberOfInternships; i++) {

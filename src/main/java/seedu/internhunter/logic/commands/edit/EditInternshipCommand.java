@@ -36,7 +36,9 @@ import seedu.internhunter.model.internship.Requirement;
 import seedu.internhunter.model.internship.Wage;
 import seedu.internhunter.ui.tabs.TabName;
 
-/** todo javadocs (shawn) */
+/**
+ * Edits an Internship in the Model's Internship list.
+ */
 public class EditInternshipCommand extends EditCommand {
     public static final String MESSAGE_USAGE = COMMAND_WORD + " " + INTERNSHIP_ALIAS
             + ": Edits the " + INTERNSHIP_NAME + " identified by the index number used in the displayed "
@@ -60,7 +62,13 @@ public class EditInternshipCommand extends EditCommand {
     private final Index internshipIndex;
     private final EditInternshipDescriptor editInternshipDescriptor;
 
-    /** todo javadocs (shawn) */
+    /**
+     * Creates an EditInternshipCommand to edit the specified {@code InternshipItem}.
+     *
+     * @param companyIndex of the company in the company list.
+     * @param internshipIndex of the internship in the company's internship list to edit.
+     * @param editInternshipDescriptor The details to edit the internship with.
+     */
     public EditInternshipCommand(Index companyIndex, Index internshipIndex,
             EditInternshipDescriptor editInternshipDescriptor) {
         requireAllNonNull(companyIndex, internshipIndex, editInternshipDescriptor);
@@ -70,6 +78,13 @@ public class EditInternshipCommand extends EditCommand {
         this.editInternshipDescriptor = new EditInternshipDescriptor(editInternshipDescriptor);
     }
 
+    /**
+     * Executes the EditInternshipCommand and returns the result message.
+     *
+     * @param model {@code Model} which the command should operate on.
+     * @return Feedback message of the operation result for display.
+     * @throws CommandException If an error occurs during command execution.
+     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
@@ -90,8 +105,12 @@ public class EditInternshipCommand extends EditCommand {
     }
 
     /**
-     * Creates and returns a {@code Person} with the details of {@code personToEdit}
-     * edited with {@code editPersonDescriptor}.
+     * Creates and returns an {@code InternshipItem} with the details of {@code internshipToEdit}
+     * edited with {@code editInternshipDescriptor}.
+     *
+     * @param internshipToEdit The internship to edit.
+     * @param editInternshipDescriptor The details to edit the internship with.
+     * @return The edited internship.
      */
     private static InternshipItem createEditedInternship(InternshipItem internshipToEdit,
             EditInternshipDescriptor editInternshipDescriptor) {
@@ -134,8 +153,8 @@ public class EditInternshipCommand extends EditCommand {
     }
 
     /**
-     * Stores the details to edit the person with. Each non-empty field value will replace the
-     * corresponding field value of the person.
+     * Stores the details to edit the internship with. Each non-empty field value will replace the
+     * corresponding field value of the internship.
      */
     public static class EditInternshipDescriptor {
         private JobTitle jobTitle;
@@ -148,7 +167,6 @@ public class EditInternshipCommand extends EditCommand {
 
         /**
          * Copy constructor.
-         * A defensive copy of {@code tags} is used internally.
          */
         public EditInternshipDescriptor(EditInternshipDescriptor toCopy) {
             setJobTitle(toCopy.jobTitle);
@@ -189,17 +207,16 @@ public class EditInternshipCommand extends EditCommand {
         }
 
         /**
-         * Sets {@code tags} to this object's {@code tags}.
-         * A defensive copy of {@code tags} is used internally.
+         * Sets {@code requirements} to this object's {@code requirements}.
          */
         public void setRequirements(Set<Requirement> requirements) {
             this.requirements = (requirements != null) ? new HashSet<>(requirements) : null;
         }
 
         /**
-         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * Returns an unmodifiable requirement set, which throws {@code UnsupportedOperationException}
          * if modification is attempted.
-         * Returns {@code Optional#empty()} if {@code tags} is null.
+         * Returns {@code Optional#empty()} if {@code requirements} is null.
          */
         public Optional<Set<Requirement>> getRequirements() {
             return (requirements != null) ? Optional.of(Collections.unmodifiableSet(requirements)) : Optional.empty();

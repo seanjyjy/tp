@@ -29,12 +29,17 @@ import seedu.internhunter.logic.parser.util.InternshipParserUtil;
 import seedu.internhunter.model.internship.Requirement;
 
 /**
- * todo javadocs (shawn)
+ * Parses input arguments and creates a new EditInternshipCommand object.
  */
 public class EditInternshipCommandParser implements Parser<EditCommand> {
 
     /**
-     * todo javadocs (shawn)
+     * Parses the given {@code String} of arguments in the context of the EditInternshipCommand
+     * and returns an EditInternshipCommand object for execution.
+     *
+     * @param args User's input.
+     * @return An EditInternshipCommand object that contains the input predicate.
+     * @throws ParseException if the user input does not conform to the expected format.
      */
     public EditInternshipCommand parse(String args) throws ParseException {
         requireNonNull(args);
@@ -72,9 +77,10 @@ public class EditInternshipCommandParser implements Parser<EditCommand> {
     }
 
     /**
-     * Parses {@code Collection<String> tags} into a {@code Set<Tag>} if {@code tags} is non-empty.
-     * If {@code tags} contain only one element which is an empty string, it will be parsed into a
-     * {@code Set<Tag>} containing zero tags.
+     * Parses {@code Collection<String> requirements} into a {@code Set<Requirement>} if {@code requirements} is
+     * non-empty.
+     * If {@code requirements} contains only one element which is an empty string, it will be parsed into a
+     * {@code Set<Requirement>} containing zero tags.
      */
     private Optional<Set<Requirement>> parseRequirementsForEdit(Collection<String> requirements)
             throws ParseException {

@@ -28,14 +28,14 @@ import seedu.internhunter.logic.parser.util.CompanyParserUtil;
 import seedu.internhunter.model.company.Industry;
 
 /**
- * Parses input arguments and creates a new EditCommand object
+ * Parses input arguments and creates a new EditCompanyCommand object.
  */
 public class EditCompanyCommandParser implements Parser<EditCommand> {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the EditCommand
-     * and returns an EditCommand object for execution.
-     * @throws ParseException if the user input does not conform the expected format
+     * Parses the given {@code String} of arguments in the context of the EditCompanyCommand
+     * and returns an EditCompanyCommand object for execution.
+     * @throws ParseException if the user input does not conform the expected format.
      */
     public EditCompanyCommand parse(String args) throws ParseException {
         requireNonNull(args);
@@ -74,9 +74,9 @@ public class EditCompanyCommandParser implements Parser<EditCommand> {
     }
 
     /**
-     * Parses {@code Collection<String> tags} into a {@code Set<Tag>} if {@code tags} is non-empty.
-     * If {@code tags} contain only one element which is an empty string, it will be parsed into a
-     * {@code Set<Tag>} containing zero tags.
+     * Parses {@code Collection<String> industries} into a {@code Set<Industry>} if {@code industries} is non-empty.
+     * If {@code industries} contains only one element which is an empty string, it will be parsed into a
+     * {@code Set<Industry>} containing zero industries.
      */
     private Optional<Set<Industry>> parseIndustriesForEdit(Collection<String> industries) throws ParseException {
         assert industries != null;

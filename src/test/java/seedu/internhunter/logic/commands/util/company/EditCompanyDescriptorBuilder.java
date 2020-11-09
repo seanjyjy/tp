@@ -14,20 +14,32 @@ import seedu.internhunter.model.company.Email;
 import seedu.internhunter.model.company.Industry;
 import seedu.internhunter.model.company.Phone;
 
-// todo javadocs (shawn)
+/**
+ * A utility class to help with building EditCompanyDescriptor objects.
+ */
 public class EditCompanyDescriptorBuilder {
     private EditCompanyDescriptor descriptor;
 
+    /**
+     * Constructs an {@code EditCompanyDescriptorBuilder}.
+     */
     public EditCompanyDescriptorBuilder() {
         descriptor = new EditCompanyDescriptor();
     }
 
+    /**
+     * Constructs an {@code EditCompanyDescriptorBuilder} with the given {@code EditCompanyDescriptor}.
+     *
+     * @param descriptor The details to edit the company with.
+     */
     public EditCompanyDescriptorBuilder(EditCompanyDescriptor descriptor) {
         this.descriptor = new EditCompanyDescriptor(descriptor);
     }
 
     /**
-     * Returns an {@code EditProfileItemDescriptor} with fields containing {@code profileItem}'s details
+     * Constructs an {@code EditCompanyDescriptor} with fields containing {@code companyItem}'s details.
+     *
+     * @param companyItem The company whose details will be used in the created descriptor.
      */
     public EditCompanyDescriptorBuilder(CompanyItem companyItem) {
         descriptor = new EditCompanyDescriptor();
@@ -39,7 +51,10 @@ public class EditCompanyDescriptorBuilder {
     }
 
     /**
-     * Sets the {@code ProfileItemCategory} of the {@code EditProfileItemDescriptor} that we are building.
+     * Sets the {@code Address} of the {@code EditCompanyDescriptor} that we are building.
+     *
+     * @param address The address to set.
+     * @return The builder with the descriptor's address set.
      */
     public EditCompanyDescriptorBuilder withAddress(String address) {
         requireNonNull(address);
@@ -48,7 +63,10 @@ public class EditCompanyDescriptorBuilder {
     }
 
     /**
-     * Sets the {@code Title} of the {@code EditProfileItemDescriptor} that we are building.
+     * Sets the {@code CompanyName} of the {@code EditCompanyDescriptor} that we are building.
+     *
+     * @param companyName The company name to set.
+     * @return The builder with the descriptor's company name set.
      */
     public EditCompanyDescriptorBuilder withCompanyName(String companyName) {
         requireNonNull(companyName);
@@ -57,7 +75,10 @@ public class EditCompanyDescriptorBuilder {
     }
 
     /**
-     * Sets the {@code Title} of the {@code EditProfileItemDescriptor} that we are building.
+     * Sets the {@code Email} of the {@code EditCompanyDescriptor} that we are building.
+     *
+     * @param email The email to set.
+     * @return The builder with the descriptor's email set.
      */
     public EditCompanyDescriptorBuilder withEmail(String email) {
         requireNonNull(email);
@@ -66,7 +87,10 @@ public class EditCompanyDescriptorBuilder {
     }
 
     /**
-     * Sets the {@code Title} of the {@code EditProfileItemDescriptor} that we are building.
+     * Sets the {@code Phone} of the {@code EditCompanyDescriptor} that we are building.
+     *
+     * @param phone The phone to set.
+     * @return The builder with the descriptor's phone set.
      */
     public EditCompanyDescriptorBuilder withPhone(String phone) {
         requireNonNull(phone);
@@ -75,7 +99,10 @@ public class EditCompanyDescriptorBuilder {
     }
 
     /**
-     * Sets the {@code Title} of the {@code EditProfileItemDescriptor} that we are building.
+     * Sets the {@code Industry} set of the {@code EditCompanyDescriptor} that we are building.
+     *
+     * @param industries The industries to set.
+     * @return The builder with the descriptor's industries set.
      */
     public EditCompanyDescriptorBuilder withIndustries(String... industries) {
         requireNonNull(industries);
@@ -83,12 +110,20 @@ public class EditCompanyDescriptorBuilder {
         return this;
     }
 
+    /**
+     * Returns the descriptor.
+     *
+     * @return The descriptor.
+     */
     public EditCompanyDescriptor build() {
         return descriptor;
     }
 
     /**
-     * Returns a set of requirements containing the list of strings given.
+     * Returns a set of industries containing the list of strings given.
+     *
+     * @param strings Representative of industries.
+     * @return A set of industries containing the list of strings given.
      */
     private Set<Industry> getIndustrySet(String... strings) {
         return Arrays.stream(strings)

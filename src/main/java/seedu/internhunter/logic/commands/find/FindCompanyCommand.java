@@ -14,7 +14,8 @@ import seedu.internhunter.model.company.CompanyNameContainsKeyWordsPredicate;
 import seedu.internhunter.ui.tabs.TabName;
 
 /**
- * todo javadocs
+ * Finds and lists all company items in InternHunter whose CompanyName contains any of the argument keywords.
+ * Keyword matching is case-insensitive.
  */
 public class FindCompanyCommand extends FindCommand {
 
@@ -26,10 +27,23 @@ public class FindCompanyCommand extends FindCommand {
 
     private final CompanyNameContainsKeyWordsPredicate predicate;
 
+    /**
+     * Creates a FindCompanyCommand to find all company items whose CompanyName contains any of the argument keywords.
+     * Keyword matching is case-insensitive.
+     *
+     * @param predicate The predicate to check if a company's name contains any of the argument keywords.
+     */
     public FindCompanyCommand(CompanyNameContainsKeyWordsPredicate predicate) {
         this.predicate = predicate;
     }
 
+    /**
+     * Executes the find company command and returns the result message.
+     *
+     * @param model {@code Model} which the command should operate on.
+     * @return Feedback message of the operation result for display.
+     * @throws CommandException If an error occurs during command execution.
+     */
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
